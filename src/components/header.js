@@ -1,42 +1,35 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import "./header.css"
+import Logo from "./assets/logo.svg"
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerIsOpen: true
+    };
+  }
+  render() {
+    return (
+      <header>
+        <div className="header-content">
+          <div className="header-brand">
+            <Link to="/"><Logo className="header-logo" /></Link>
+            <button className={this.state.headerIsOpen ? "header-btn" : "hidden"}>V</button>
+          </div>
+          <div className="header-menu">
+            <Link to="#evento">EL EVENTO</Link>
+            <Link to="#confirmar">CONFIRMAR</Link>
+            <Link to="#confirmar">DRESS CODE</Link>
+            <Link to="#confirmar">LIBRO DE VISITA</Link>
+            <Link to="#confirmar">HOTELES</Link>
+          </div>
+        </div>
+      </header>
+    )
+  }
 }
 
 export default Header

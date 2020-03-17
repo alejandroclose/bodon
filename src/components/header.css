@@ -1,0 +1,62 @@
+header {
+  width: 100%;
+  background: white;
+  margin-bottom: 1.45rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.header-brand{
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-menu , a {
+  color: #434142;
+  text-decoration: none;
+  margin: 0.25rem 1.5rem 0.25rem 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.header-btn {
+  color: #434142;
+}
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+
+  .header-brand{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .header-menu {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .header-menu, a{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+
+}
