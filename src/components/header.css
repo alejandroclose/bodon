@@ -28,12 +28,10 @@ header {
   margin: 0.25rem 1.5rem 0.25rem 1.5rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.header-btn {
-  color: #434142;
+@media only screen and (min-width:768px){
+  .header-btn {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -42,7 +40,7 @@ header {
   .header-brand{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
   
   .header-menu {
@@ -58,5 +56,14 @@ header {
     margin: 0;
   }
 
+  .header-btn {
+    color: #434142;
+    cursor: pointer;
+
+  }
+
+  .hidden {
+    display: none;
+  }
 
 }
