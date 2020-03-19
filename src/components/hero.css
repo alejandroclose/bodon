@@ -5,10 +5,12 @@
   background-color: #EDEFED;
   display: flex;
   justify-content: center;
+  max-height: 80vh;
 }
 
 .hero-content{
   width: 100vw;
+  
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -43,9 +45,5 @@
   .hero-text{
     margin: 1rem;
     font-size: 1.5rem;
-  }
-
-  .hero-img{
-    max-height: 25vh;
   }
 }
