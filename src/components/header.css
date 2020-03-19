@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
 header {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
@@ -8,7 +7,7 @@ header {
   flex-direction: column;
 }
 
-.header-brand{
+.header-brand {
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
@@ -24,14 +23,14 @@ header {
   justify-content: center;
 }
 
-.header-menu , a {
+.header-menu, a {
   color: #434142;
   text-decoration: none;
   margin: 0 1.5rem 0.25rem 1.5rem;
   font-size: 0.8rem;
 }
 
-@media only screen and (min-width:768px){
+@media only screen and (min-width:768px) {
   .header-btn {
     display: none;
   }
@@ -39,45 +38,37 @@ header {
 
 @media only screen and (max-width: 767px) {
   /* phones */
-
-  .header-brand{
+  .header-brand {
     padding: 0 1rem;
     width: 100vw;
     display: flex;
     justify-content: space-between;
   }
-  
   .header-menu {
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
-
-  .arrow-up{
+  .arrow-up {
     transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
   }
-
-  .header-menu, a{
+  .header-menu, a {
     display: flex;
     justify-content: flex-end;
     margin: 0.5rem;
   }
-
   .header-btn {
     color: #434142;
     cursor: pointer;
     background-color: transparent;
     border: none;
   }
-
-  .header-logo{
+  .header-logo {
     width: 85%;
   }
-
   .hidden {
     display: none;
   }
-
 }

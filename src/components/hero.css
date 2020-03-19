@@ -1,13 +1,12 @@
 @import url('./fonts/silk-serif-bold/stylesheet.css');
-
-.hero{
+.hero {
   font-family: 'silk_serifbold';
   background-color: #EDEFED;
   display: flex;
   justify-content: center;
 }
 
-.hero-content{
+.hero-content {
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -35,18 +34,16 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .hero-cover{
+  .hero-cover {
     max-width: 80vw;
     max-height: 30vh;
     margin: 0;
   }
-  
-  .hero-text{
+  .hero-text {
     margin: 1rem;
     font-size: 1.5rem;
   }
-
-  .hero-img{
+  .hero-img {
     max-height: 30vh;
   }
 }
