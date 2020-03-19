@@ -18,9 +18,7 @@ class Header extends React.Component {
           <div className="hero-text">
             Alejandra y Alejandro
           </div>
-          <div className="hero-img">
             <img src={cover} className="hero-cover" />
-          </div>
           <div className="hero-text">
             17 de Octubre de 2020
           </div>

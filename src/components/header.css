@@ -6,14 +6,13 @@ header {
   background: white;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
 }
 
 .header-brand{
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  margin-top: 0.3rem;
   display: flex;
   justify-content: center;
 }
@@ -28,7 +27,8 @@ header {
 .header-menu , a {
   color: #434142;
   text-decoration: none;
-  margin: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin: 0 1.5rem 0.25rem 1.5rem;
+  font-size: 0.8rem;
 }
 
 @media only screen and (min-width:768px){
