@@ -3,6 +3,7 @@ import React from "react"
 
 import "./header.css"
 import Logo from "./assets/logo.svg"
+import ArrowDown from "./assets/arrow-down.svg"
 
 class Header extends React.Component {
   constructor(props) {
@@ -22,7 +23,9 @@ class Header extends React.Component {
         <div className="header-content">
           <div className="header-brand">
             <Link to="/"><Logo className="header-logo" /></Link>
-            <button className="header-btn" onClick={this.handleClick.bind(this)}>Menu</button>
+            <button className="header-btn" onClick={this.handleClick.bind(this)}>
+              <ArrowDown className={this.state.headerIsOpen ? "arrow-up" : ""} />
+            </button>
           </div>
           <div className={this.state.headerIsOpen ? "header-menu" : "header-menu hidden"}>
             <Link to="#evento">EL EVENTO</Link>

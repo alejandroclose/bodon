@@ -10,7 +10,7 @@ header {
 
 .header-brand{
   width: 100%;
-  max-width: 960px;
+  max-width: 100vw;
   margin: 0 auto;
   margin-top: 0.3rem;
   display: flex;
@@ -41,7 +41,8 @@ header {
   /* phones */
 
   .header-brand{
-    width: 100%;
+    padding: 0 1rem;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
   }
@@ -53,16 +54,26 @@ header {
     justify-content: flex-end;
   }
 
+  .arrow-up{
+    transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  }
+
   .header-menu, a{
     display: flex;
     justify-content: flex-end;
-    margin: 0.25rem 0 0.25rem 0;
+    margin: 0.5rem;
   }
 
   .header-btn {
     color: #434142;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
 
+  .header-logo{
+    width: 85%;
   }
 
   .hidden {
