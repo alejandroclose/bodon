@@ -80,7 +80,7 @@
   font-size: 0.8rem;
 }
 
-.map, a{
+.map > a{
   text-decoration: underline;
   margin: 0;
 }

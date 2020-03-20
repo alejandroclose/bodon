@@ -23,6 +23,19 @@ const IndexPage = () => (
       map="Mapa e indicaciones"
       mapLink=""
     />
+    <Event
+      id="evento"
+      title="LA BODA"
+      desc="¡El gran día!"
+      img={<Masia/>}
+      infoTitle="La Ceremonia"
+      schedule="12:30h, Sábado, 17 de Octubre de 2020"
+      location="Basílica de los Santos Mártires Justo y Pastor"
+      address="Plaça de Sant Just, s/n, 08002 Barcelona"
+      mobility="Se facilitará servicio de autocar desde el centro de Barcelona a la Iglesia y, después de la ceremonia, desde la Iglesia a la Masía Ribas."
+      map="Mapa e indicaciones"
+      mapLink=""
+    />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
