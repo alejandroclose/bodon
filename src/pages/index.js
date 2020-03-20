@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Event from "../components/event"
 
+import Masia from "../components/assets/masia.svg"
+
 const IndexPage = () => (
   <Layout>
     <Hero />
@@ -12,7 +14,7 @@ const IndexPage = () => (
       id="evento"
       title="LA PRE-BODA"
       desc="Para calentar motores y dar la bienvenida a los que vienen de fuera"
-      img="asdf"
+      img={<Masia/>}
       infoTitle="Comida de bienvenida"
       schedule="13:30h, Jueves 15 de Octubre de 2020"
       location="Cabrils"

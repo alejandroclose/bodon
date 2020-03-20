@@ -3,12 +3,16 @@ import React from "react"
 
 import "./event.css"
 
+import Cal from "../components/assets/cal.svg"
+import Pin from "../components/assets/pin.svg"
+import Map from "../components/assets/map.svg"
+
 class Event extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
     }
-  } 
+  }
 
   render() {
     return (
@@ -20,14 +24,30 @@ class Event extends React.Component {
         <div className="event-content">
           <div className="event-image">{this.props.img}</div>
           <div className="event-details">
-            <div className="info-title">{this.props.infoTitle}</div>
+            <div className="info-title"><h3>{this.props.infoTitle}</h3></div>
             <div className="info">
-              <div className="schedule">{this.props.schedule}</div>
-              <div className="location">{this.props.location}</div>
-              <div className="mobility">
-                <div>Transporte</div>
-                <div>{this.props.mobility}</div></div>
-              <div className="map"><Link to={this.props.mapLink}>{this.props.map}</Link></div>
+              <div className="info-text">
+                <div className="icon"><Cal /></div>
+                <div className="time-date">{this.props.schedule}</div></div>
+              <div className="info-text">
+                <div className="icon"><Pin /></div>
+                <div>
+                <div className="location"><h4>{this.props.location}</h4></div>
+                <div className="address">{this.props.address}</div>
+                </div>
+              </div>
+              <div className="info-text">
+                <div className="icon">
+                </div>
+                <div>
+                  <div className="location"><h4>Transporte</h4></div>
+                  <div className="mobility-info">{this.props.mobility}</div></div>
+              </div>
+              <div className="info-text">
+                <div className="icon"><Map/></div>
+                <div className="map"><Link to={this.props.mapLink}>{this.props.map}</Link></div>
+              </div>
+              
             </div>
           </div>
         </div>

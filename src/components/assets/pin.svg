@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="24px" viewBox="0 0 18 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Pin</title>
+    <desc></desc>
+    <defs>
+        <filter x="-1.2%" y="-0.3%" width="102.3%" height="100.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web-A&amp;A-LANDING(1)" transform="translate(-977.000000, -569.000000)">
+            <g id="Group-8" filter="url(#filter-1)" transform="translate(110.000000, -47.000000)"></g>
+            <g id="Group-178" transform="translate(973.000000, 531.000000)" fill="#000000">
+                <path d="M19.6983,51 L19.4043,51.191 L12.8593,60.257 L6.3543,50.982 C4.1613,47.371 5.3103,42.638 8.9033,40.456 C10.0973,39.732 11.4633,39.331 12.8523,39.331 C15.5433,39.331 17.9823,40.971 19.3773,43.269 C20.7693,45.561 20.8533,48 19.6303,51 L19.6983,51 Z M18.9543,40.905 C17.3373,39.319 15.1973,38.446 12.9313,38.446 C10.5993,38.446 8.4163,39.362 6.7843,41.026 C4.0953,43.769 3.5543,47.981 5.4493,51.31 L5.5393,51.399 L12.1183,60.815 C12.3873,61.197 12.9653,61.299 13.3513,61.025 C13.4343,60.966 13.5053,60.895 13.5633,60.813 L20.2963,51.312 C22.2793,47.936 21.7383,43.679 18.9543,40.905 L18.9543,40.905 Z" id="Fill-165"></path>
+                <path d="M12.8601,50.683 C10.9371,50.683 9.3721,49.119 9.3721,47.196 C9.3721,45.273 10.9371,43.708 12.8601,43.708 C14.7831,43.708 16.3471,45.273 16.3471,47.196 C16.3471,49.119 14.7831,50.683 12.8601,50.683 M12.8601,42.725 C10.3951,42.725 8.3891,44.731 8.3891,47.196 C8.3891,49.661 10.3951,51.666 12.8601,51.666 C15.3251,51.666 17.3311,49.661 17.3311,47.196 C17.3311,44.731 15.3251,42.725 12.8601,42.725" id="Fill-166"></path>
+            </g>
+        </g>
+    </g>
+</svg>
