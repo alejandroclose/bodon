@@ -6,6 +6,7 @@ import Hero from "../components/hero"
 import Event from "../components/event"
 
 import Masia from "../components/assets/masia.svg"
+import Iglesia from "../components/assets/iglesia.svg"
 
 const IndexPage = () => (
   <Layout>
@@ -27,7 +28,7 @@ const IndexPage = () => (
       id="evento"
       title="LA BODA"
       desc="¡El gran día!"
-      img={<Masia/>}
+      img={<Iglesia/>}
       infoTitle="La Ceremonia"
       schedule="12:30h, Sábado, 17 de Octubre de 2020"
       location="Basílica de los Santos Mártires Justo y Pastor"
