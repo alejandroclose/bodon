@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
+import Divider from "../components/divider"
 import Event from "../components/event"
 import SingleEvent from "../components/single-event"
 
@@ -14,6 +15,7 @@ export default () => {
   return (
     <Layout>
       <Hero />
+      <Divider />
       <Event
         id="evento"
         title="LA PRE-BODA"
