@@ -6,8 +6,8 @@ import Hero from "../components/hero"
 import Event from "../components/event"
 import SingleEvent from "../components/single-event"
 
-import Masia from "../../public/static/masia.png"
-import Iglesia from "../../public/static/iglesia.png"
+import Masia from "../images/masia.png"
+import Iglesia from "../images/iglesia.png"
 
 export default () => {
 
