@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Event from "../components/event"
+import SingleEvent from "../components/single-event"
 
 export default () => {
   const images = useStaticQuery(graphql`
@@ -53,6 +54,17 @@ console.log(images.allFile.edges)
         location="Basílica de los Santos Mártires Justo y Pastor"
         address="Plaça de Sant Just, s/n, 08002 Barcelona"
         mobility="Se facilitará servicio de autocar desde el centro de Barcelona a la Iglesia y, después de la ceremonia, desde la Iglesia a la Masía Ribas."
+        map="Mapa e indicaciones"
+        mapLink=""
+      />
+      <SingleEvent
+        id="evento"
+        img={`/static/masia.png`}
+        infoTitle="La Celebración"
+        schedule="14:00h, Sábado, 17 de Octubre de 2020"
+        location="Masía Ribas"
+        address="Manuel Carrasco i Formiguera 08850 Gavà, Barcelona"
+        mobility="Se facilitará servicio de autocar desde la Iglesia a la Masía Ribas y de regreso al centro de Barcelona a varias horas de la noche."
         map="Mapa e indicaciones"
         mapLink=""
       />

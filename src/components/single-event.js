@@ -7,7 +7,7 @@ import Cal from "../components/assets/cal.svg"
 import Pin from "../components/assets/pin.svg"
 import Map from "../components/assets/map.svg"
 
-class Event extends React.Component {
+class SingleEvent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,12 +17,8 @@ class Event extends React.Component {
   render() {
     return (
       <div id={this.props.id}>
-        <div className="event-header">
-          <div className="event-title">{this.props.title}</div>
-          <div className="event-description">{this.props.desc}</div>
-        </div>
         <div className="event-content">
-          <div className="event-media"><img className="event-image" src={this.props.img} /></div>
+          <div><img className="event-image" src={this.props.img} /></div>
           <div className="event-details">
             <div className="info-title"><h3>{this.props.infoTitle}</h3></div>
             <div className="info">
@@ -56,4 +52,4 @@ class Event extends React.Component {
   }
 }
 
-export default Event;
+export default SingleEvent;
