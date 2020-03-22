@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import Img from "gatsby-image"
 
 import "./event.css"
 
@@ -22,7 +23,7 @@ class Event extends React.Component {
           <div className="event-description">{this.props.desc}</div>
         </div>
         <div className="event-content">
-          <div className="event-media"><img className="event-image" src={this.props.img} /></div>
+          <div className="event-media">{this.props.img}</div>
           <div className="event-details">
             <div className="info-title"><h3>{this.props.infoTitle}</h3></div>
             <div className="info">

@@ -18,7 +18,7 @@ class SingleEvent extends React.Component {
     return (
       <div id={this.props.id}>
         <div className="event-content">
-          <div><img className="event-image" src={this.props.img} /></div>
+          <div className="event-media">{this.props.img}</div>
           <div className="event-details">
             <div className="info-title"><h3>{this.props.infoTitle}</h3></div>
             <div className="info">

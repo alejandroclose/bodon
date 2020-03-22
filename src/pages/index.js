@@ -1,32 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Event from "../components/event"
 import SingleEvent from "../components/single-event"
 
-export default () => {
-  const images = useStaticQuery(graphql`
-  query MyQuery {
-    allFile(filter: {extension: {regex: "/(png)/"}}) {
-      edges {
-        node {
-          base
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`);
+import Masia from "../../public/static/masia.png"
+import Iglesia from "../../public/static/iglesia.png"
 
-console.log(images.allFile.edges)
+export default () => {
 
   return (
     <Layout>
@@ -35,7 +18,7 @@ console.log(images.allFile.edges)
         id="evento"
         title="LA PRE-BODA"
         desc="Para calentar motores y dar la bienvenida a los que vienen de fuera"
-        img={`/static/masia.png`}
+        img={<img className="event-image" src={Masia}></img>}
         infoTitle="Comida de bienvenida"
         schedule="13:30h, Jueves 15 de Octubre de 2020"
         location="Cabrils"
@@ -48,7 +31,7 @@ console.log(images.allFile.edges)
         id="evento"
         title="LA BODA"
         desc="¡El gran día!"
-        img={`/static/iglesia.png`}
+        img={<img className="event-image" src={Iglesia}></img>}
         infoTitle="La Ceremonia"
         schedule="12:30h, Sábado, 17 de Octubre de 2020"
         location="Basílica de los Santos Mártires Justo y Pastor"
@@ -59,7 +42,7 @@ console.log(images.allFile.edges)
       />
       <SingleEvent
         id="evento"
-        img={`/static/masia.png`}
+        img={<img className="event-image" src={Masia}></img>}
         infoTitle="La Celebración"
         schedule="14:00h, Sábado, 17 de Octubre de 2020"
         location="Masía Ribas"
