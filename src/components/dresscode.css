@@ -1,0 +1,22 @@
+@import url('./fonts/silk-serif-bold/stylesheet.css');
+
+#dress-code{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.dc-header{
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dc-title{
+  font-family: 'silk_serifbold';
+  margin: 0;
+}

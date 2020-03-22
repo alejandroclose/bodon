@@ -6,6 +6,7 @@ import Hero from "../components/hero"
 import Divider from "../components/divider"
 import Event from "../components/event"
 import SingleEvent from "../components/single-event"
+import DressCode from "../components/dresscode"
 
 import Masia from "../images/masia.png"
 import Iglesia from "../images/iglesia.png"
@@ -53,6 +54,7 @@ export default () => {
         map="Mapa e indicaciones"
         mapLink=""
       />
+      <DressCode />
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )
