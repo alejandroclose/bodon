@@ -22,7 +22,7 @@ class Event extends React.Component {
           <div className="event-description">{this.props.desc}</div>
         </div>
         <div className="event-content">
-          <div className="event-image">{this.props.img}</div>
+          <div><img className="event-image" src={this.props.img}/></div>
           <div className="event-details">
             <div className="info-title"><h3>{this.props.infoTitle}</h3></div>
             <div className="info">
