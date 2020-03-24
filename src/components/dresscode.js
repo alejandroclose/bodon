@@ -23,14 +23,14 @@ class DressCode extends React.Component {
         </div>
         <div className="dc-content">
           <div className="dc-desc break">
-            <div className="dc-img"><img src={Women}/></div>
+            <div><img className="dc-img" src={Women}/></div>
             <div className="dc-text">
               <h3 className="dc-text-title">Mujeres</h3>
               <div className="dc-text-content">Vestido corto y tocado opcional.<br/>Se ruega evitar el color blanco y los tonos beige, crudos y empolvados.</div>
             </div>
           </div>
           <div className="dc-desc">
-            <div className="dc-img"><img src={Men}/></div>
+            <div><img className="dc-img" src={Men}/></div>
             <div className="dc-text">
               <h3 className="dc-text-title">Hombres</h3>
               <div className="dc-text-content">Traje oscuro y corbata.<br/>Los testigos pueden llevar chaqué.</div>

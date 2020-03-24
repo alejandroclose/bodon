@@ -40,6 +40,7 @@
 
 .dc-img{
   width: 30vw;
+  height: 30vh;
 }
 
 .dc-text{
@@ -54,6 +55,7 @@
 
 .dc-text-content{
   width: 25vw;
+  height: 20vh;
   text-align: center;
 }
 
