@@ -28,7 +28,7 @@ export default () => {
         address="Passatge Sant Joan, 08348 Cabrils, Barcelona"
         mobility="Se facilitará servicio de autocar desde el centro de Barcelona a la casa de Cabrils y de regreso."
         map="Mapa e indicaciones"
-        mapLink=""
+        mapLink="https://www.google.com/maps/place/Passatge+Sant+Joan,+08348+Cabrils,+Barcelona/@41.5209197,2.3823943,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4b4213b268661:0x3d904ff5ded2049c!8m2!3d41.5209203!4d2.3844475"
       />
       <Event
         id="evento"
@@ -41,7 +41,7 @@ export default () => {
         address="Plaça de Sant Just, s/n, 08002 Barcelona"
         mobility="Se facilitará servicio de autocar desde el centro de Barcelona a la Iglesia y, después de la ceremonia, desde la Iglesia a la Masía Ribas."
         map="Mapa e indicaciones"
-        mapLink=""
+        mapLink="https://www.google.com/maps/place/Bas%C3%ADlica+dels+Sants+M%C3%A0rtirs+Just+i+Pastor/@41.3828179,2.1760105,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2f8dc412f27:0x10cb34ec22f1c0e4!8m2!3d41.3828139!4d2.1782045"
       />
       <SingleEvent
         id="evento"
@@ -52,7 +52,7 @@ export default () => {
         address="Manuel Carrasco i Formiguera 08850 Gavà, Barcelona"
         mobility="Se facilitará servicio de autocar desde la Iglesia a la Masía Ribas y de regreso al centro de Barcelona a varias horas de la noche."
         map="Mapa e indicaciones"
-        mapLink=""
+        mapLink="https://www.google.com/maps/place/Masia+Ribas+ahora+es+La+Centenaria+1779+-+Unique+events/@41.3005078,1.995518,17z/data=!3m1!4b1!4m5!3m4!1s0x12a49d29b587cec7:0x13e5b9b43d7af993!8m2!3d41.3005038!4d1.997712"
       />
       <DressCode />
       <Link to="/page-2/">Go to page 2</Link>

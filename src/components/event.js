@@ -6,6 +6,7 @@ import "./event.css"
 import Cal from "../components/assets/cal.svg"
 import Pin from "../components/assets/pin.svg"
 import Map from "../components/assets/map.svg"
+import Bus from "../components/assets/bus.svg"
 
 class Event extends React.Component {
   constructor(props) {
@@ -27,27 +28,25 @@ class Event extends React.Component {
             <div className="info-title"><h3>{this.props.infoTitle}</h3></div>
             <div className="info">
               <div className="info-text">
-                <div className="icon"><Cal /></div>
+                <div ><Cal className="icon" /></div>
                 <div className="time-date">{this.props.schedule}</div></div>
               <div className="info-text">
-                <div className="icon"><Pin /></div>
+                <div><Pin className="icon"/></div>
                 <div>
                   <div className="location"><h4>{this.props.location}</h4></div>
                   <div className="address">{this.props.address}</div>
                 </div>
               </div>
               <div className="info-text">
-                <div className="icon">
-                </div>
+                <div><Bus className="icon"/></div>
                 <div>
                   <div className="location"><h4>Transporte</h4></div>
                   <div className="mobility-info">{this.props.mobility}</div></div>
               </div>
               <div className="info-text">
-                <div className="icon"><Map /></div>
-                <div className="map"><Link to={this.props.mapLink}>{this.props.map}</Link></div>
+                <div><Map className="icon"/></div>
+                <div className="map"><a href={this.props.mapLink} target="_blank">{this.props.map}</a></div>
               </div>
-
             </div>
           </div>
         </div>

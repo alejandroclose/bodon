@@ -22,6 +22,6 @@
 
 @media only screen and (max-width: 767px) {
   .divider {
-    height: 10vh;
-  }
+    height: 15vh;
+}
 }
