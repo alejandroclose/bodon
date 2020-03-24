@@ -63,3 +63,26 @@
   border-right: 2px dashed #B5B6B7;
   margin-right: 0 !important;
 }
+
+@media only screen and (max-width: 767px) {
+  .dc-desc {
+    width: 100vw;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .dc-img {
+    width: 100vw;
+}
+
+.dc-text-content {
+  width: 70vw;
+}
+
+.break {
+  border-right: none;
+}
+}
