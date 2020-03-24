@@ -1,14 +1,14 @@
 @import url('./fonts/silk-serif-bold/stylesheet.css');
-
-#dress-code{
+#dress-code {
   width: 100vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 2.5rem;
 }
 
-.dc-header{
+.dc-header {
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,48 @@
   align-items: center;
 }
 
-.dc-title{
+.dc-title {
   font-family: 'silk_serifbold';
   margin: 0;
+}
+
+.dc-content {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.dc-desc {
+  width: 45vw;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dc-img{
+  width: 30vw;
+}
+
+.dc-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.dc-text-title{
+  font-family: 'silk_serifbold';
+}
+
+.dc-text-content{
+  width: 25vw;
+  text-align: center;
+}
+
+.break {
+  border-right: 2px dashed #B5B6B7;
+  margin-right: 0 !important;
 }

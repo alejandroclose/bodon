@@ -1,16 +1,16 @@
 @import url('./fonts/silk-serif-bold/stylesheet.css');
-
 .divider {
   width: 100vw;
-  height: 20vh;
+  height: 18vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.divider-text{
+.divider-text {
   font-family: 'silk_serifbold';
+  margin: 0;
+  margin-top: 1rem;
 }
 
 .divider-icon {
@@ -21,11 +21,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .divider{
-    height: 7vh;
-  }
-
-  .hide-icon {
-    display: none;
+  .divider {
+    height: 10vh;
   }
 }

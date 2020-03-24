@@ -16,7 +16,7 @@ class Divider extends React.Component {
     return (
       <div className="divider">
         <h2 className="divider-text">EL EVENTO</h2>
-        <button className="divider-icon hide-icon"><Link to="#evento"><ArrowDown /></Link></button>
+        <button className="divider-icon"><Link to="#evento"><ArrowDown /></Link></button>
       </div>
     )
   }
