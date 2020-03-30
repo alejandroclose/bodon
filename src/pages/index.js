@@ -7,6 +7,7 @@ import Divider from "../components/divider"
 import Event from "../components/event"
 import SingleEvent from "../components/single-event"
 import DressCode from "../components/dresscode"
+import Confirmation from "../components/confirmation"
 
 import Masia from "../images/masia.png"
 import Iglesia from "../images/iglesia.png"
@@ -54,6 +55,7 @@ export default () => {
         map="Mapa e indicaciones"
         mapLink="https://www.google.com/maps/place/Masia+Ribas+ahora+es+La+Centenaria+1779+-+Unique+events/@41.3005078,1.995518,17z/data=!3m1!4b1!4m5!3m4!1s0x12a49d29b587cec7:0x13e5b9b43d7af993!8m2!3d41.3005038!4d1.997712"
       />
+      <Confirmation />
       <DressCode />
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
