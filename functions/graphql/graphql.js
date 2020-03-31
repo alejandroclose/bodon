@@ -34,13 +34,16 @@ const resolvers = {
     }
   },
   Mutation: {
-    addAttendee: (_,{name}) =>  {
+    addAttendee: (_, { name }) => {
       attendeeIndex++;
       const id = `key-${attendeeIndex}`;
-      attendees[id] = {id, name, preboda, autocar, boda, noviene, 
-      vegano, vegetariano, gluten, lactosa, otros}
+      attendees[id] = {
+        id, name, preboda, autocar, boda, noviene,
+        vegano, vegetariano, gluten, lactosa, otros
+      }
       return attendees[id];
-  }}
+    }
+  }
 };
 
 const server = new ApolloServer({
