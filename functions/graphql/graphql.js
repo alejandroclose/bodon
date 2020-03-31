@@ -24,7 +24,7 @@ const typeDefs = gql`
   }
 `;
 
-const Attendees = {};
+const attendees = {};
 let attendeeIndex = 0;
 // Provide resolver functions for your schema fields
 const resolvers = {
