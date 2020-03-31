@@ -3,7 +3,7 @@ import React from "react"
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 import "./confirmation.css"
-import AtendeeForm from "./atendee-form"
+import AtendeeForm from "./attendee-form"
 
 
 class Confirmation extends React.Component {
