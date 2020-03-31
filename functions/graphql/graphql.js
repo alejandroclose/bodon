@@ -34,7 +34,8 @@ const resolvers = {
     }
   },
   Mutation: {
-    addAttendee: (_, { name }) => {
+    addAttendee: (_, { name, preboda, autocar, boda, noviene,
+      vegano, vegetariano, gluten, lactosa, otros }) => {
       attendeeIndex++;
       const id = `key-${attendeeIndex}`;
       attendees[id] = {
