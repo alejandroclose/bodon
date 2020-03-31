@@ -3,15 +3,44 @@ const { ApolloServer, gql } = require('apollo-server-lambda');
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    hello: String
+    attendees: [Attendee]!
+  }
+  type Attendee {
+    id: ID!
+    name: String!
+    preboda: Boolean
+    autocar: Boolean
+    boda: Boolean
+    noviene: Boolean
+    vegano: Boolean
+    vegetariano: Boolean
+    gluten: Boolean
+    lactosa: Boolean
+    otros: String
+  }
+
+  type Mutation{
+    addAttendee(name: String! ): Attendee
   }
 `;
 
+const Attendees = {};
+let attendeeIndex = 0;
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    hello: () => 'Hello world!',
+    attendees: () => {
+      return Object.values(attendees)
+    }
   },
+  Mutation: {
+    addAttendee: (_,{name}) =>  {
+      attendeeIndex++;
+      const id = `key-${attendeeIndex}`;
+      attendees[id] = {id, name, preboda, autocar, boda, noviene, 
+      vegano, vegetariano, gluten, lactosa, otros}
+      return attendees[id];
+  }}
 };
 
 const server = new ApolloServer({
