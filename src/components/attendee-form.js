@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useFormik } from 'formik';
+import gql from 'graphql-tag';
+import { useMutation } from '@apollo/react-hooks';
+
+const ADD_ATTENDEE = gql`
+  mutation addAttendee(
+    $name: String!
+    $preboda: Boolean
+    $autocar: Boolean
+    $boda: Boolean
+    $noviene: Boolean
+    $vegano: Boolean
+    $vegetariano: Boolean
+    $gluten: Boolean
+    $lactosa: Boolean
+    $otros: String){
+      id
+    }
+`;
+
 
 const AtendeeForm = () => {
+
+  const [addAttendee, { data }] = useMutation(ADD_ATTENDEE);
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -17,8 +39,21 @@ const AtendeeForm = () => {
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
+      addAttendee({
+        name: values.name, 
+        preboda: values.preboda,
+        autocar: values.autocar,
+        boda: values.boda,
+        noviene: values.noviene,
+        vegano: values.vegano,
+        vegetariano: values.vegetariano,
+        gluten: values.gluten,
+        lactosa: values.lactosa,
+        otros: values.otros })
+
     },
   });
+
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
@@ -102,8 +137,8 @@ const AtendeeForm = () => {
           onChange={formik.handleChange}
           value={formik.values.otros}
         />
+        <button type="submit">Submit</button>
       </form>
-      <button type="submit">Submit</button>
     </div>
   );
 };
