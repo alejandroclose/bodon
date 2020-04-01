@@ -21,16 +21,16 @@ const typeDefs = gql`
 
   type Mutation{
     addAttendee(
-      $name: String!
-      $preboda: Boolean
-      $autocar: Boolean
-      $boda: Boolean
-      $noviene: Boolean
-      $vegano: Boolean
-      $vegetariano: Boolean
-      $gluten: Boolean
-      $lactosa: Boolean
-      $otros: String): Attendee
+      name: String!
+      preboda: Boolean
+      autocar: Boolean
+      boda: Boolean
+      noviene: Boolean
+      vegano: Boolean
+      vegetariano: Boolean
+      gluten: Boolean
+      lactosa: Boolean
+      otros: String): Attendee
   }
 `;
 
