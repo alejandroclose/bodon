@@ -19,7 +19,7 @@ const typeDefs = gql`
     otros: String
   }
 
-  type Mutation{
+  type Mutation {
     addAttendee(
       name: String!
       preboda: Boolean
@@ -30,7 +30,8 @@ const typeDefs = gql`
       vegetariano: Boolean
       gluten: Boolean
       lactosa: Boolean
-      otros: String): Attendee
+      otros: String
+    ): Attendee
   }
 `;
 
