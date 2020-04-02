@@ -1,4 +1,9 @@
 const { ApolloServer, gql } = require('apollo-server-lambda');
+const faunadb = require('faunadb');
+
+const q = faunadb.query
+
+var client = new faunadb.Client({secret: process.env.FAUNA});
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -34,25 +39,51 @@ const typeDefs = gql`
   }
 `;
 
-const attendees = {};
-let attendeeIndex = 0;
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    attendees: () => {
-      return Object.values(attendees)
+    attendees: async () => {
+      const results = await client.query(q);
+      return results.data.map(([ref,name,preboda,autocar,boda, noviene, 
+        vegano, gevetariano, gluten, lactosa, otros]) => ({
+        id: ref.id,
+        name,
+        preboda,
+        autocar,
+        boda,
+        noviene,
+        vegano,
+        vegetariano,
+        gluten,
+        lactosa,
+        otros
+      }))
     }
   },
   Mutation: {
-    addAttendee: (_, { name, preboda, autocar, boda, noviene,
-      vegano, vegetariano, gluten, lactosa, otros }) => {
-      attendeeIndex++;
-      const id = `key-${attendeeIndex}`;
-      attendees[id] = {
-        id, name, preboda, autocar, boda, noviene,
-        vegano, vegetariano, gluten, lactosa, otros
+    addAttendee: async (_, { name }, {preboda}, {autocar}, {boda}, {noviene},
+      {vegano}, {vegetariano}, {gluten}, {lactosa}, {otros}) => {
+        const results = await client.query(
+          q.Create(q.Collection("attendees"), {
+            data: {
+              name,
+              preboda,
+              autocar,
+              boda,
+              noviene,
+              vegano,
+              vegetariano,
+              gluten,
+              lactosa,
+              otros
+            }
+          })
+        );
+
+      return {
+        ...results.data,
+        id: results.ref.id
       }
-      return attendees[id];
     }
   }
 };
