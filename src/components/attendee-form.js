@@ -15,7 +15,10 @@ const ADD_ATTENDEE = gql`
     $gluten: Boolean
     $lactosa: Boolean
     $otros: String){
-      id
+      addAttendee (name:$name, preboda:$preboda, autocar:$autocar, boda:$boda, noviene:$noviene,vegano:$vegano, vegetariano:$vegetariano, glute:$gluten, lactosa:$lactosa, otros:$otros ){
+        id
+        name
+      }
     }
 `;
 
