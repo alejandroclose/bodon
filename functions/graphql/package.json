@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server-lambda": "^2.11.0",
+    "faunadb": "^2.13.1",
     "graphql": "^14.6.0"
   }
 }
