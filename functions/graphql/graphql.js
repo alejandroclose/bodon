@@ -46,7 +46,7 @@ const resolvers = {
     attendees: async () => {
       const results = await client.query(q);
       return results.data.map(([ref,name,preboda,autocar,boda, noviene, 
-        vegano, gevetariano, gluten, lactosa, otros]) => ({
+        vegano, vegetariano, gluten, lactosa, otros]) => ({
         id: ref.id,
         name,
         preboda,
@@ -62,8 +62,8 @@ const resolvers = {
     }
   },
   Mutation: {
-    addAttendee: async (_, { name }, {preboda}, {autocar}, {boda}, {noviene},
-      {vegano}, {vegetariano}, {gluten}, {lactosa}, {otros}) => {
+    addAttendee: async ({_, name, preboda, autocar, boda, noviene,
+      vegano, vegetariano, gluten, lactosa, otros}) => {
         const results = await client.query(
           q.Create(q.Collection("attendees"), {
             data: {
