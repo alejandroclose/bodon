@@ -62,7 +62,7 @@ const resolvers = {
     }
   },
   Mutation: {
-    addAttendee: async ({_, name, preboda, autocar, boda, noviene,
+    addAttendee: async (_,{ name, preboda, autocar, boda, noviene,
       vegano, vegetariano, gluten, lactosa, otros}) => {
         const results = await client.query(
           q.Create(q.Collection("attendees"), {
