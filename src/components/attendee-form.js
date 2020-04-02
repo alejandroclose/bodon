@@ -42,7 +42,8 @@ const AtendeeForm = () => {
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-      addAttendee({
+      console.log(values.name)
+      addAttendee({ variables: {
         name: values.name, 
         preboda: values.preboda,
         autocar: values.autocar,
@@ -52,7 +53,9 @@ const AtendeeForm = () => {
         vegetariano: values.vegetariano,
         gluten: values.gluten,
         lactosa: values.lactosa,
-        otros: values.otros })
+        otros: values.otros
+      }
+    })
 
     },
   });
