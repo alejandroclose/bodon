@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { useFormik } from 'formik';
-import gql from 'graphql-tag';
-import { useMutation } from '@apollo/react-hooks';
+import React, { useContext, useState } from "react"
+import { useFormik } from "formik"
+import gql from "graphql-tag"
+import { useMutation } from "@apollo/react-hooks"
 
 const ADD_ATTENDEE = gql`
   mutation addAttendee(
@@ -10,22 +10,28 @@ const ADD_ATTENDEE = gql`
     $autocar: Boolean
     $boda: Boolean
     $noviene: Boolean
-    $vegano: Boolean
-    $vegetariano: Boolean
-    $gluten: Boolean
-    $lactosa: Boolean
-    $otros: String){
-      addAttendee (name:$name, preboda:$preboda, autocar:$autocar, boda:$boda, noviene:$noviene,vegano:$vegano, vegetariano:$vegetariano, gluten:$gluten, lactosa:$lactosa, otros:$otros ){
-        id
-        name
-      }
+    $plusone: String
+    $food: String
+    $otros: String
+  ) {
+    addAttendee(
+      name: $name
+      preboda: $preboda
+      autocar: $autocar
+      boda: $boda
+      noviene: $noviene
+      plusone: $plusone
+      food: $food
+      otros: $otros
+    ) {
+      id
+      name
     }
-`;
-
+  }
+`
 
 const AtendeeForm = () => {
-
-  const [addAttendee, { data }] = useMutation(ADD_ATTENDEE);
+  const [addAttendee, { data }] = useMutation(ADD_ATTENDEE)
 
   const formik = useFormik({
     initialValues: {
@@ -34,31 +40,27 @@ const AtendeeForm = () => {
       autocar: false,
       boda: false,
       noviene: false,
-      vegano: false,
-      vegetariano: false,
-      gluten: false,
-      lactosa: false,
+      plusone: "",
+      food:"",
       otros: "",
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(values, null, 2))
       console.log(values.name)
-      addAttendee({ variables: {
-        name: values.name, 
-        preboda: values.preboda,
-        autocar: values.autocar,
-        boda: values.boda,
-        noviene: values.noviene,
-        vegano: values.vegano,
-        vegetariano: values.vegetariano,
-        gluten: values.gluten,
-        lactosa: values.lactosa,
-        otros: values.otros
-      }
-    })
-
+      addAttendee({
+        variables: {
+          name: values.name,
+          preboda: values.preboda,
+          autocar: values.autocar,
+          boda: values.boda,
+          noviene: values.noviene,
+          plusone: values.plusone,
+          food: values.food,
+          otros: values.otros,
+        },
+      })
     },
-  });
+  })
 
   return (
     <div>
@@ -103,38 +105,23 @@ const AtendeeForm = () => {
           onChange={formik.handleChange}
           value={formik.values.noviene}
         />
-        <label htmlFor="vegano">Vegano</label>
-        <input
-          id="vegano"
-          name="vegano"
-          type="checkbox"
+        <label htmlFor="plusone">¿Quién te acompaña?</label>
+          <textarea
+          id="plusone"
+          name="plusone"
+          type="input"
           onChange={formik.handleChange}
-          value={formik.values.vegano}
-        />
-        <label htmlFor="vegetariano">Vegetariano</label>
-        <input
-          id="vegetariano"
-          name="vegetariano"
-          type="checkbox"
+          value={formik.values.plusone}
+          />
+        
+        <label htmlFor="food">¿Tienes alguna petición alimentaria especial?</label>
+          <textarea 
+          id="food"
+          name="food"
+          type="input"
           onChange={formik.handleChange}
-          value={formik.values.vegetariano}
-        />
-        <label htmlFor="gluten">Gluten</label>
-        <input
-          id="gluten"
-          name="gluten"
-          type="checkbox"
-          onChange={formik.handleChange}
-          value={formik.values.gluten}
-        />
-        <label htmlFor="lactosa">Lactosa</label>
-        <input
-          id="lactosa"
-          name="lactosa"
-          type="checkbox"
-          onChange={formik.handleChange}
-          value={formik.values.lactosa}
-        />
+          value={formik.values.food}
+          />
         <label htmlFor="otros">Otros</label>
         <textarea
           id="otros"
@@ -146,7 +133,7 @@ const AtendeeForm = () => {
         <button type="submit">Submit</button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default AtendeeForm;
+export default AtendeeForm
