@@ -9,6 +9,7 @@ var client = new faunadb.Client({secret: process.env.FAUNA});
 const typeDefs = gql`
   type Query {
     attendees: [Attendee]!
+    guestbook: [Note]!
   }
   type Attendee {
     id: ID!
@@ -24,6 +25,13 @@ const typeDefs = gql`
     otros: String
   }
 
+  type Note {
+    id: ID!
+    name: String!
+    message: String!
+    date: String!
+  }
+
   type Mutation {
     addAttendee(
       name: String!
@@ -37,29 +45,28 @@ const typeDefs = gql`
       lactosa: Boolean
       otros: String
     ): Attendee
+
+    addNote(
+      name: String!
+      message: String!
+      date: String!
+    ): Note
   }
 `;
 
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    attendees: async () => {
-      const results = await client.query(q);
-      return results.data.map(([ref,name,preboda,autocar,boda, noviene, 
-        vegano, vegetariano, gluten, lactosa, otros]) => ({
+    guestbook: async() => {
+      const results = await client.query(q.Paginate(q.Match(q.Index("all_notes"))));
+      console.log(results)
+      return results.data.map(([ref,name, message, date]) => ({
         id: ref.id,
         name,
-        preboda,
-        autocar,
-        boda,
-        noviene,
-        vegano,
-        vegetariano,
-        gluten,
-        lactosa,
-        otros
+        message,
+        date
       }))
-    }
+    },
   },
   Mutation: {
     addAttendee: async (_,{ name, preboda, autocar, boda, noviene,
@@ -85,7 +92,22 @@ const resolvers = {
         ...results.data,
         id: results.ref.id
       }
-    }
+    },
+    addNote: async (_,{name, message, date}) => {
+      const results = await client.query(
+        q.Create(q.Collection("guestbook"), {
+          data: {
+            name,
+            message,
+            date
+          }
+        })
+      );
+      return {
+        ...results.data,
+        id: results.ref.id
+      }
+    },
   }
 };
 
