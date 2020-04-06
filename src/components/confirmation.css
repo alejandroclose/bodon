@@ -10,6 +10,10 @@
   display: none;
 }
 
+.conf-open {
+  width: 70vw;
+}
+
 .conf-header{
   width: 35vw;
   display: flex;

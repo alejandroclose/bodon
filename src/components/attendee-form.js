@@ -3,6 +3,8 @@ import { useFormik } from "formik"
 import gql from "graphql-tag"
 import { useMutation } from "@apollo/react-hooks"
 
+import "./attendee-form.css"
+
 const ADD_ATTENDEE = gql`
   mutation addAttendee(
     $name: String!
@@ -41,7 +43,7 @@ const AtendeeForm = () => {
       boda: false,
       noviene: false,
       plusone: "",
-      food:"",
+      food: "",
       otros: "",
     },
     onSubmit: values => {
@@ -64,7 +66,7 @@ const AtendeeForm = () => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit}>
+      <form className="attendee-form" onSubmit={formik.handleSubmit}>
         <label htmlFor="name">Nombre y Apellidos</label>
         <input
           id="name"
@@ -81,14 +83,19 @@ const AtendeeForm = () => {
           onChange={formik.handleChange}
           value={formik.values.preboda}
         />
-        <label htmlFor="autocar">¿Autocar?</label>
-        <input
-          id="autocar"
-          name="autocar"
-          type="checkbox"
-          onChange={formik.handleChange}
-          value={formik.values.autocar}
-        />
+        <label
+          className={formik.values.preboda ? "autocar" : "hidden"}
+          htmlFor="autocar"
+        >
+          ¿Autocar?>
+          <input
+            id="autocar"
+            name="autocar"
+            type="checkbox"
+            onChange={formik.handleChange}
+            value={formik.values.autocar}
+          />
+        </label>
         <label htmlFor="boda">Boda</label>
         <input
           id="boda"
@@ -106,22 +113,24 @@ const AtendeeForm = () => {
           value={formik.values.noviene}
         />
         <label htmlFor="plusone">¿Quién te acompaña?</label>
-          <textarea
+        <textarea
           id="plusone"
           name="plusone"
           type="input"
           onChange={formik.handleChange}
           value={formik.values.plusone}
-          />
-        
-        <label htmlFor="food">¿Tienes alguna petición alimentaria especial?</label>
-          <textarea 
+        />
+
+        <label htmlFor="food">
+          ¿Tienes alguna petición alimentaria especial?
+        </label>
+        <textarea
           id="food"
           name="food"
           type="input"
           onChange={formik.handleChange}
           value={formik.values.food}
-          />
+        />
         <label htmlFor="otros">Otros</label>
         <textarea
           id="otros"
