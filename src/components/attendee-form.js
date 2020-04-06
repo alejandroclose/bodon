@@ -9,8 +9,9 @@ const ADD_ATTENDEE = gql`
   mutation addAttendee(
     $name: String!
     $preboda: Boolean
-    $autocar: Boolean
+    $autocarpre: Boolean
     $boda: Boolean
+    $autocarboda: Boolean
     $noviene: Boolean
     $plusone: String
     $food: String
@@ -19,8 +20,9 @@ const ADD_ATTENDEE = gql`
     addAttendee(
       name: $name
       preboda: $preboda
-      autocar: $autocar
+      autocarpre: $autocarpre
       boda: $boda
+      autocarboda: $autocarboda
       noviene: $noviene
       plusone: $plusone
       food: $food
@@ -39,8 +41,9 @@ const AtendeeForm = () => {
     initialValues: {
       name: "",
       preboda: false,
-      autocar: false,
+      autocarpre: false,
       boda: false,
+      autocarboda: false,
       noviene: false,
       plusone: "",
       food: "",
@@ -53,8 +56,9 @@ const AtendeeForm = () => {
         variables: {
           name: values.name,
           preboda: values.preboda,
-          autocar: values.autocar,
+          autocarpre: values.autocarpre,
           boda: values.boda,
+          autocarboda: values.autocarboda,
           noviene: values.noviene,
           plusone: values.plusone,
           food: values.food,
@@ -84,16 +88,16 @@ const AtendeeForm = () => {
           value={formik.values.preboda}
         />
         <label
-          className={formik.values.preboda ? "autocar" : "hidden"}
-          htmlFor="autocar"
+          className={formik.values.preboda ? "autocarpre" : "hidden"}
+          htmlFor="autocarpre"
         >
           ¿Autocar?>
           <input
-            id="autocar"
-            name="autocar"
+            id="autocarpre"
+            name="autocarpre"
             type="checkbox"
             onChange={formik.handleChange}
-            value={formik.values.autocar}
+            value={formik.values.autocarpre}
           />
         </label>
         <label htmlFor="boda">Boda</label>

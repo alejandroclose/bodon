@@ -15,8 +15,9 @@ const typeDefs = gql`
     id: ID!
     name: String!
     preboda: Boolean
-    autocar: Boolean
+    autocarpre: Boolean
     boda: Boolean
+    autocarboda: Boolean
     noviene: Boolean
     plusone: String
     food: String
@@ -34,8 +35,9 @@ const typeDefs = gql`
     addAttendee(
       name: String!
       preboda: Boolean
-      autocar: Boolean
+      autocarpre: Boolean
       boda: Boolean
+      autocarboda: Boolean
       noviene: Boolean
       plusone: String
       food: String
@@ -65,15 +67,16 @@ const resolvers = {
     },
   },
   Mutation: {
-    addAttendee: async (_,{ name, preboda, autocar, boda, noviene,
+    addAttendee: async (_,{ name, preboda, autocarpre, boda, autocarboda, noviene,
       plusone, food, otros}) => {
         const results = await client.query(
           q.Create(q.Collection("attendees"), {
             data: {
               name,
               preboda,
-              autocar,
+              autocarpre,
               boda,
+              autocarboda,
               noviene,
               plusone,
               food,
