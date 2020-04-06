@@ -71,24 +71,26 @@ const AtendeeForm = () => {
   return (
     <div>
       <form className="attendee-form" onSubmit={formik.handleSubmit}>
-        <label htmlFor="name">Nombre y Apellidos</label>
+        <label className="attendee-label" htmlFor="name">Nombre y Apellidos</label>
         <input
           id="name"
           name="name"
           type="text"
           onChange={formik.handleChange}
           value={formik.values.name}
+          className="attendee-input"
         />
-        <label htmlFor="preboda">Comida pre-boda</label>
+        <label className="attendee-label" htmlFor="preboda">Comida pre-boda</label>
         <input
           id="preboda"
           name="preboda"
           type="checkbox"
           onChange={formik.handleChange}
           value={formik.values.preboda}
+          className=""
         />
         <label
-          className={formik.values.preboda ? "autocarpre" : "hidden"}
+          className={formik.values.preboda ? "attendee-label" : "hidden"}
           htmlFor="autocarpre"
         >
           ¿Autocar?>
@@ -100,7 +102,7 @@ const AtendeeForm = () => {
             value={formik.values.autocarpre}
           />
         </label>
-        <label htmlFor="boda">Boda</label>
+        <label className="attendee-label" htmlFor="boda">Boda</label>
         <input
           id="boda"
           name="boda"
@@ -122,7 +124,7 @@ const AtendeeForm = () => {
           />
         </label>
 
-        <label htmlFor="noviene">No podré ir</label>
+        <label className="attendee-label" htmlFor="noviene">No podré ir</label>
         <input
           id="noviene"
           name="noviene"
@@ -130,16 +132,17 @@ const AtendeeForm = () => {
           onChange={formik.handleChange}
           value={formik.values.noviene}
         />
-        <label htmlFor="plusone">¿Quién te acompaña?</label>
+        <label className="attendee-label" htmlFor="plusone">¿Quién te acompaña?</label>
         <textarea
           id="plusone"
           name="plusone"
           type="input"
           onChange={formik.handleChange}
           value={formik.values.plusone}
+          className="attendee-input"
         />
 
-        <label htmlFor="food">
+        <label className="attendee-label" htmlFor="food">
           ¿Tienes alguna petición alimentaria especial?
         </label>
         <textarea
@@ -148,14 +151,16 @@ const AtendeeForm = () => {
           type="input"
           onChange={formik.handleChange}
           value={formik.values.food}
+          className="attendee-input"
         />
-        <label htmlFor="otros">Otros</label>
+        <label className="attendee-label" htmlFor="otros">Otros</label>
         <textarea
           id="otros"
           name="otros"
           type="input"
           onChange={formik.handleChange}
           value={formik.values.otros}
+          className="attendee-input"
         />
         <button type="submit">Submit</button>
       </form>

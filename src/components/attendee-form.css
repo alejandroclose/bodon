@@ -1,3 +1,5 @@
+@import url('./fonts/silk-serif-bold/stylesheet.css');
+
 .attendee-form {
   width: 50vw;
   display: flex;
@@ -9,4 +11,16 @@
 
 .hidden {
   display: none;
+}
+
+.attendee-label {
+  font-family: 'silk_serifbold';
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.attendee-input {
+  width: 50%;
+  border: 0;
+  line-height: 2.25rem;
 }
