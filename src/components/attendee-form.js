@@ -108,6 +108,20 @@ const AtendeeForm = () => {
           onChange={formik.handleChange}
           value={formik.values.boda}
         />
+        <label
+          className={formik.values.boda ? "autocarboda" : "hidden"}
+          htmlFor="autocarboda"
+        >
+          ¿Autocar?
+          <input
+            id="autocarboda"
+            name="autocarboda"
+            type="checkbox"
+            onChange={formik.handleChange}
+            value={formik.values.autocarboda}
+          />
+        </label>
+
         <label htmlFor="noviene">No podré ir</label>
         <input
           id="noviene"
