@@ -1,7 +1,7 @@
 @import url('./fonts/silk-serif-bold/stylesheet.css');
 
 .attendee-form {
-  width: 50vw;
+  width: 75vw;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -9,14 +9,17 @@
   align-items: flex-start;
 }
 
-.hidden {
+.autocar-hidden {
   display: none;
+}
+.attendee-name {
+  width: 25vw;
 }
 
 .attendee-label {
   font-family: 'silk_serifbold';
   font-size: 1.4rem;
-  margin: 1.5rem 0 0.5rem 0;
+  margin: 1rem 0 0 ;
 }
 
 .attendee-input {

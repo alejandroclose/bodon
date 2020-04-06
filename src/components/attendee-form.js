@@ -71,14 +71,14 @@ const AtendeeForm = () => {
   return (
     <div>
       <form className="attendee-form" onSubmit={formik.handleSubmit}>
-        <label className="attendee-label" htmlFor="name">Nombre y Apellidos</label>
+        <label className="attendee-label" htmlFor="name">Nombre y Apellido</label>
         <input
           id="name"
           name="name"
           type="text"
           onChange={formik.handleChange}
           value={formik.values.name}
-          className="attendee-input"
+          className="attendee-name"
         />
         <label className="attendee-label" htmlFor="preboda">Comida pre-boda</label>
         <input
@@ -90,7 +90,7 @@ const AtendeeForm = () => {
           className=""
         />
         <label
-          className={formik.values.preboda ? "attendee-label" : "hidden"}
+          className={formik.values.preboda ? "attendee-label" : "autocar-hidden"}
           htmlFor="autocarpre"
         >
           ¿Autocar?>
@@ -111,7 +111,7 @@ const AtendeeForm = () => {
           value={formik.values.boda}
         />
         <label
-          className={formik.values.boda ? "autocarboda" : "hidden"}
+          className={formik.values.boda ? "autocarboda" : "autocar-hidden"}
           htmlFor="autocarboda"
         >
           ¿Autocar?
