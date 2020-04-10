@@ -29,7 +29,7 @@ class Confirmation extends React.Component {
             Nos encantaría que nos acompañaras en nuestro día. Por favor, confirma si podrás o no venir.
         </div>
           <div className="conf-arrow"></div>
-          <button onClick={this.handleClick} className="conf-btn">CONFIRMAR</button>
+          <button className={this.state.isOpen ? "conf-closed" : "conf-btn"} onClick={this.handleClick}>CONFIRMAR</button>
         </div>
         <div className={this.state.isOpen ? "conf-open" : "conf-closed"}>
           <AtendeeForm />

@@ -6,6 +6,16 @@
   align-items: center;
 }
 
+.conf-btn{
+  border: 5px solid white;
+  padding: 4px;
+  width: 13vw;
+  margin: 2rem;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
 .conf-closed {
   display: none;
 }

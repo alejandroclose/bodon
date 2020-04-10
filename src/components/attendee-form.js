@@ -5,6 +5,9 @@ import { useMutation } from "@apollo/react-hooks"
 
 import "./attendee-form.css"
 
+import Autocar from "../images/autocar.png"
+import { checkPropTypes } from "prop-types"
+
 const ADD_ATTENDEE = gql`
   mutation addAttendee(
     $name: String!
@@ -34,7 +37,7 @@ const ADD_ATTENDEE = gql`
   }
 `
 
-const AtendeeForm = () => {
+const AtendeeForm = (props) => {
   const [addAttendee, { data }] = useMutation(ADD_ATTENDEE)
 
   const formik = useFormik({
@@ -50,7 +53,7 @@ const AtendeeForm = () => {
       otros: "",
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      alert(JSON.stringify(values, null, 2));
       console.log(values.name)
       addAttendee({
         variables: {
@@ -64,7 +67,9 @@ const AtendeeForm = () => {
           food: values.food,
           otros: values.otros,
         },
-      })
+      }).then(
+        formik.resetForm()
+        )
     },
   })
 
@@ -80,59 +85,83 @@ const AtendeeForm = () => {
           value={formik.values.name}
           className="attendee-name"
         />
-        <label className="attendee-label" htmlFor="preboda">Comida pre-boda</label>
+        <div className="attendee-label">¿A qué eventos vas a venir?</div>
+        <label className="attendee-label-cb" htmlFor="preboda">
         <input
           id="preboda"
           name="preboda"
           type="checkbox"
           onChange={formik.handleChange}
-          value={formik.values.preboda}
-          className=""
-        />
+          checked={formik.values.preboda}
+          className="attendee-checkbox"
+          disabled={(formik.values.noviene)? "disabled" : ""}
+        /><div>Comida pre-boda</div>
+        </label>
         <label
-          className={formik.values.preboda ? "attendee-label" : "autocar-hidden"}
+          className={formik.values.preboda ? "autocar-label" : "form-hidden"}
           htmlFor="autocarpre"
         >
-          ¿Autocar?>
+          <div className="autocar-list">
+            <div className="autocar-line"></div>
+          </div>
+          <div className="autocar-icon">
+            <img src={Autocar}/>
+          </div>
+          <div>¿Necesitarás servicio de autocar?</div>
           <input
             id="autocarpre"
             name="autocarpre"
             type="checkbox"
             onChange={formik.handleChange}
-            value={formik.values.autocarpre}
+            checked={formik.values.autocarpre}
+            className="autocar-checkbox"
           />
         </label>
-        <label className="attendee-label" htmlFor="boda">Boda</label>
+        <label className="attendee-label-cb" htmlFor="boda">
         <input
           id="boda"
           name="boda"
           type="checkbox"
           onChange={formik.handleChange}
-          value={formik.values.boda}
-        />
+          checked={formik.values.boda}
+          className="attendee-checkbox"
+          disabled={(formik.values.noviene)? "disabled" : ""}
+        />Boda
+        </label>
         <label
-          className={formik.values.boda ? "autocarboda" : "autocar-hidden"}
+          className={formik.values.boda ? "autocar-label" : "form-hidden"}
           htmlFor="autocarboda"
         >
-          ¿Autocar?
+          <div className="autocar-list">
+            <div className="autocar-line"></div>
+          </div>
+          <div className="autocar-icon">
+            <img src={Autocar}/>
+          </div>
+          <div>¿Necesitarás servicio de autocar?</div>
           <input
             id="autocarboda"
             name="autocarboda"
             type="checkbox"
             onChange={formik.handleChange}
-            value={formik.values.autocarboda}
+            checked={formik.values.autocarboda}
+            className="autocar-checkbox"
           />
         </label>
 
-        <label className="attendee-label" htmlFor="noviene">No podré ir</label>
+        <label className={(formik.values.preboda || formik.values.boda)?"form-hidden" : "attendee-label-cb"} htmlFor="noviene">
         <input
           id="noviene"
           name="noviene"
           type="checkbox"
+          disabled={(formik.values.preboda || formik.values.boda)? "disabled" : ""}
           onChange={formik.handleChange}
-          value={formik.values.noviene}
+          checked={formik.values.noviene}
+          className="attendee-checkbox"
         />
-        <label className="attendee-label" htmlFor="plusone">¿Quién te acompaña?</label>
+        No podré ir
+        </label>
+        <label className={(formik.values.preboda || formik.values.boda) ? "attendee-label" : "form-hidden"} htmlFor="plusone">¿Quién te acompaña?
         <textarea
           id="plusone"
           name="plusone"
@@ -141,10 +170,10 @@ const AtendeeForm = () => {
           value={formik.values.plusone}
           className="attendee-input"
         />
-
-        <label className="attendee-label" htmlFor="food">
-          ¿Tienes alguna petición alimentaria especial?
         </label>
+        <label className={(formik.values.preboda || formik.values.boda) ? "attendee-label" : "form-hidden"} htmlFor="food">
+          ¿Tienes alguna petición alimentaria especial?
+        
         <textarea
           id="food"
           name="food"
@@ -153,7 +182,8 @@ const AtendeeForm = () => {
           value={formik.values.food}
           className="attendee-input"
         />
-        <label className="attendee-label" htmlFor="otros">Otros</label>
+        </label>
+        <label className="attendee-label" htmlFor="otros">¿Quieres dejarnos algún mensaje?</label>
         <textarea
           id="otros"
           name="otros"
@@ -162,7 +192,7 @@ const AtendeeForm = () => {
           value={formik.values.otros}
           className="attendee-input"
         />
-        <button type="submit">Submit</button>
+        <button className="submit-btn" type="submit">CONFIRMAR</button>
       </form>
     </div>
   )

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
 html {
   font-family: sans-serif;
@@ -165,6 +165,7 @@ textarea {
 [type="radio"] {
   box-sizing: border-box;
   padding: 0;
+  border-style: none;
 }
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
