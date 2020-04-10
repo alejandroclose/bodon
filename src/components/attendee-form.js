@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react"
-import { useFormik } from "formik"
+import { useFormik} from "formik"
 import gql from "graphql-tag"
 import { useMutation } from "@apollo/react-hooks"
+import * as yup from "yup"
 
 import "./attendee-form.css"
 
 import Autocar from "../images/autocar.png"
-import { checkPropTypes } from "prop-types"
 
 const ADD_ATTENDEE = gql`
   mutation addAttendee(
@@ -37,8 +37,47 @@ const ADD_ATTENDEE = gql`
   }
 `
 
+yup.object({
+  terms: yup
+    .boolean()
+    .oneOf([true], 'Must Accept Terms and Conditions'),
+})
+
+let validationSchema = yup.object({
+  name: yup.string().required("Necesitamos tu nombre completo para apuntarte en la lista"),
+  preboda: yup.boolean(),
+  boda: yup.boolean(),
+  noviene: yup.boolean(),
+}).test(
+  'myCustomCheckboxTest',
+  null,
+  (obj) => {
+    if(obj.preboda || obj.boda || obj.noviene) {
+      return true;
+    }
+    return new yup.ValidationError(
+      'Elige si podrás acompañarnos o no podrás venir',
+      null,
+      'myCustomFieldName'
+    )
+  }
+)
+
+
 const AtendeeForm = (props) => {
   const [addAttendee, { data }] = useMutation(ADD_ATTENDEE)
+
+  function validate(values) {
+    const errors = {};
+    if (!values.name) {
+      errors.name = "Necesitamos tu nombre completo para apuntarte en la lista"
+    }
+    if (!(values.preboda || values.boda || values.noviene)) {
+      errors.eventos = "Elige si podrás acompañarnos o no podrás venir."
+    }
+
+    return errors
+  }
 
   const formik = useFormik({
     initialValues: {
@@ -52,6 +91,7 @@ const AtendeeForm = (props) => {
       food: "",
       otros: "",
     },
+    validate,
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
       console.log(values.name)
@@ -85,7 +125,13 @@ const AtendeeForm = (props) => {
           value={formik.values.name}
           className="attendee-name"
         />
-        <div className="attendee-label">¿A qué eventos vas a venir?</div>
+        {formik.errors.name ? formik.errors.name : null}
+        <div name="eventos" className="attendee-label">
+          ¿A qué eventos vas a venir?
+          </div>
+          <div className="form-errors">
+          {formik.errors.eventos ? formik.errors.eventos : ""}
+          </div>
         <label className="attendee-label-cb" htmlFor="preboda">
         <input
           id="preboda"

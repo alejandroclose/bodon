@@ -90,3 +90,7 @@
   font-size: 1.25rem;
   align-self: center;
 }
+
+.form-errors{
+  height: 1rem;
+}
