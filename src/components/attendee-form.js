@@ -112,7 +112,7 @@ const AtendeeForm = props => {
     <div>
       <form className="attendee-form" onSubmit={formik.handleSubmit}>
         <label className="attendee-label" htmlFor="name">
-          Nombre y Apellido
+          Nombre y Apellido*
         <input
           id="name"
           name="name"
@@ -120,11 +120,11 @@ const AtendeeForm = props => {
           placeholder="Introduce tu nombre y apellido*"
           onChange={formik.handleChange}
           value={formik.values.name}
-          className={formik.errors.name ? formik.errors.name : "attendee-name"}
+          className={formik.errors.name ? "attendee-name required" : "attendee-name"}
         />
         </label>
         <div name="eventos" className="attendee-label">
-          ¿A qué eventos vas a venir?
+          ¿A qué eventos vendrás?*
         </div>
         <label className="attendee-label-cb" htmlFor="preboda">
           <input
@@ -135,7 +135,7 @@ const AtendeeForm = props => {
             checked={formik.values.preboda}
             className={
               formik.errors.eventos
-                ? formik.errors.eventos
+                ? "attendee-checkbox required"
                 : "attendee-checkbox"
             }
             disabled={formik.values.noviene ? "disabled" : ""}
@@ -273,9 +273,11 @@ const AtendeeForm = props => {
           value={formik.values.otros}
           className="attendee-input"
         />
+        
         <button className="submit-btn" type="submit">
           CONFIRMAR
         </button>
+        <div className="error-msg">{ formik.errors.eventos ? "* Rellena los campos obligatorios" : null }</div>
       </form>
     </div>
   )
