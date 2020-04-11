@@ -120,6 +120,7 @@ textarea {
   }
   .attendee-name {
     width: 80vw;
+    border-style: none;
   }
   .attendee-label {
     width: 80vw;
@@ -134,6 +135,12 @@ textarea {
     width: 80vw;
   }
 
+  .attendee-checkbox{
+    -moz-default-background-color: white;
+    -webkit-default-background-color: white;
+    background-color: white;
+  }
+
   .autocar-list {
     width: 25vw;
   }
@@ -141,5 +148,8 @@ textarea {
   .autocar-checkbox {
     height: 2rem;
     width: 2rem;
+    -moz-default-background-color: white;
+    -webkit-default-background-color: white;
+    background-color: white;
   }
 }
