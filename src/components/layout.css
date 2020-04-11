@@ -161,12 +161,12 @@ legend {
 textarea {
   overflow: auto;
 }
-[type="checkbox"],
+/* [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
   padding: 0;
   border-style: none;
-}
+} */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -382,7 +382,7 @@ pre {
   font-size: 0.85rem;
   line-height: 1.42;
   background: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
+  border-radius: 0px;
   overflow: auto;
   word-wrap: normal;
   padding: 1.45rem;
@@ -569,7 +569,7 @@ td:last-child {
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
+  border-radius: 0px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;

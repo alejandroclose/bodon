@@ -50,7 +50,8 @@ textarea {
   cursor: pointer;
   height: 2rem;
   width: 2rem;
-  border-radius: 0%;
+  border-radius: 0px;
+  border-style: none;
 }
 
 .autocar-checkbox {
@@ -59,7 +60,7 @@ textarea {
   height: 1.5rem;
   width: 1.5rem;
   border-style: none;
-  border-radius: 0%;
+  border-radius: 0px;
 }
 
 .attendee-input {
@@ -139,6 +140,7 @@ textarea {
     -moz-default-background-color: white;
     -webkit-default-background-color: white;
     background-color: white;
+    border-style: none;
   }
 
   .autocar-list {
@@ -151,5 +153,6 @@ textarea {
     -moz-default-background-color: white;
     -webkit-default-background-color: white;
     background-color: white;
+    border-style: none;
   }
 }
