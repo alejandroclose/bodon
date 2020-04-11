@@ -46,14 +46,15 @@ textarea {
 }
 
 .attendee-checkbox {
+  background: white;
   cursor: pointer;
   height: 2rem;
   width: 2rem;
-  border-style: none;
   border-radius: 0%;
 }
 
 .autocar-checkbox {
+  background: white;
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
@@ -97,22 +98,24 @@ textarea {
 }
 
 .required {
-  box-shadow: 0px 0px 1px 0.1px red;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
 }
 
-.error-msg{
+.error-msg {
   color: red;
 }
 
 @media only screen and (max-width: 767px) {
-  .submit-btn{
+  .submit-btn {
     width: 50vw;
   }
   .conf-open {
     width: 80vw;
   }
 
-  .attendee-form{
+  .attendee-form {
     width: 80vw;
   }
   .attendee-name {
@@ -124,7 +127,7 @@ textarea {
 
   .attendee-label-cb {
     width: 80vw;
-    margin: 1rem;
+    margin: 0.25rem;
   }
 
   .attendee-input {
@@ -135,11 +138,8 @@ textarea {
     width: 25vw;
   }
 
-  .autocar-checkbox{
+  .autocar-checkbox {
     height: 2rem;
     width: 2rem;
   }
-  
 }
-
-
