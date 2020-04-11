@@ -1,4 +1,4 @@
-@import url('./fonts/silk-serif-bold/stylesheet.css');
+@import url("./fonts/silk-serif-bold/stylesheet.css");
 
 .attendee-form {
   width: 50vw;
@@ -16,8 +16,8 @@
 }
 
 .attendee-label {
-  width:100%;
-  font-family: 'silk_serifbold';
+  width: 100%;
+  font-family: "silk_serifbold";
   font-size: 1.4rem;
   margin: 1rem 0.25rem 0 0.25rem;
   display: flex;
@@ -25,14 +25,15 @@
   flex-wrap: wrap;
 }
 
-.attendee-label input,textarea{
-  font-family: 'Montserrat', sans-serif;
+.attendee-label input,
+textarea {
+  font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
 }
 
 .attendee-label-cb {
   width: 100%;
-  font-family: 'silk_serifbold';
+  font-family: "silk_serifbold";
   font-size: 1.4rem;
   margin: 0 0.25rem 0 1rem;
   display: flex;
@@ -44,7 +45,7 @@
   align-items: center;
 }
 
-.attendee-checkbox{
+.attendee-checkbox {
   cursor: pointer;
   height: 2rem;
   width: 2rem;
@@ -52,7 +53,7 @@
   border-radius: 0%;
 }
 
-.autocar-checkbox{
+.autocar-checkbox {
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
@@ -66,25 +67,25 @@
   line-height: 2.25rem;
 }
 
-.autocar-list{
+.autocar-list {
   width: 7vw;
   height: 3rem;
   display: flex;
   justify-content: flex-end;
 }
 
-.autocar-line{
+.autocar-line {
   height: 50%;
   border-bottom: 2px solid #434142;
   border-left: 2px solid #434142;
   width: 25%;
 }
 
-.autocar-icon{
+.autocar-icon {
   width: 5rem;
 }
 
-.submit-btn{
+.submit-btn {
   border: 5px solid white;
   padding: 4px;
   width: 13vw;
@@ -97,4 +98,31 @@
 
 .required {
   box-shadow: 0px 0px 1px 0.1px red;
+}
+
+@media only screen and (max-width: 767px) {
+  .submit-btn{
+    width: 50vw;
+  }
+  .conf-open {
+    width: 80vw;
+  }
+
+  .attendee-form{
+    width: 80vw;
+  }
+  .attendee-name {
+    width: 80vw;
+  }
+  .attendee-label {
+    width: 80vw;
+  }
+
+  .attendee-label-cb {
+    width: 80vw;
+  }
+
+  .attendee-input {
+    width: 80vw;
+  }
 }
