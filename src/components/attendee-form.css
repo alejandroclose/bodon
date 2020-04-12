@@ -13,6 +13,9 @@
 }
 .attendee-name {
   width: 25vw;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .attendee-label {
@@ -28,7 +31,7 @@
 .attendee-label input,
 textarea {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .attendee-label-cb {
@@ -66,7 +69,7 @@ textarea {
 .attendee-input {
   width: 50%;
   border: 0;
-  line-height: 2.25rem;
+  line-height: 2rem;
 }
 
 .autocar-list {
@@ -136,7 +139,7 @@ textarea {
     width: 80vw;
   }
 
-  .attendee-checkbox{
+  .attendee-checkbox {
     -moz-default-background-color: white;
     -webkit-default-background-color: white;
     background-color: white;

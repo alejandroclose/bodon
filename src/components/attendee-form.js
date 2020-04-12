@@ -113,15 +113,17 @@ const AtendeeForm = props => {
       <form className="attendee-form" onSubmit={formik.handleSubmit}>
         <label className="attendee-label" htmlFor="name">
           Nombre y Apellido*
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Introduce tu nombre y apellido*"
-          onChange={formik.handleChange}
-          value={formik.values.name}
-          className={formik.errors.name ? "attendee-name required" : "attendee-name"}
-        />
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Introduce tu nombre y apellido*"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+            className={
+              formik.errors.name ? "attendee-name required" : "attendee-name"
+            }
+          />
         </label>
         <div name="eventos" className="attendee-label">
           ¿A qué eventos vendrás?*
@@ -264,20 +266,23 @@ const AtendeeForm = props => {
         </label>
         <label className="attendee-label" htmlFor="otros">
           ¿Quieres dejarnos algún mensaje?
+          <textarea
+            id="otros"
+            name="otros"
+            type="input"
+            onChange={formik.handleChange}
+            value={formik.values.otros}
+            className="attendee-input"
+          />
         </label>
-        <textarea
-          id="otros"
-          name="otros"
-          type="input"
-          onChange={formik.handleChange}
-          value={formik.values.otros}
-          className="attendee-input"
-        />
-        
         <button className="submit-btn" type="submit">
           CONFIRMAR
         </button>
-        <div className="error-msg">{ formik.errors.eventos ? "* Rellena los campos obligatorios" : null }</div>
+        <div className="error-msg">
+          {formik.errors.eventos || formik.errors.name
+            ? "* Rellena los campos obligatorios"
+            : null}
+        </div>
       </form>
     </div>
   )
