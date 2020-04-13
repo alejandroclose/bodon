@@ -36,7 +36,8 @@ textarea {
   color: grey;
 }
 
-input, textarea ::placeholder {
+input,
+textarea ::placeholder {
   color: grey;
   font-style: italic;
 }
@@ -118,7 +119,7 @@ input, textarea ::placeholder {
   color: red;
 }
 
-.success{
+.success {
   width: 30vw;
   height: 5vw;
   margin: 2rem 0 0 0;
@@ -174,5 +175,10 @@ input, textarea ::placeholder {
     -webkit-default-background-color: white;
     background-color: white;
     border-style: none;
+  }
+
+  .success {
+    width: 75vw;
+    height: 15vw;
   }
 }
