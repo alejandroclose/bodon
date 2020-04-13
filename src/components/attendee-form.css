@@ -16,6 +16,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  font-style: normal;
 }
 
 .attendee-label {
@@ -32,6 +33,12 @@
 textarea {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
+  color: grey;
+}
+
+input, textarea ::placeholder {
+  color: grey;
+  font-style: italic;
 }
 
 .attendee-label-cb {
@@ -68,8 +75,8 @@ textarea {
 
 .attendee-input {
   width: 50%;
+  height: 5rem;
   border: 0;
-  line-height: 2rem;
 }
 
 .autocar-list {
@@ -111,6 +118,17 @@ textarea {
   color: red;
 }
 
+.success{
+  width: 30vw;
+  height: 5vw;
+  margin: 2rem 0 0 0;
+  background-color: white;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 767px) {
   .submit-btn {
     width: 50vw;
@@ -124,7 +142,6 @@ textarea {
   }
   .attendee-name {
     width: 80vw;
-    border-style: none;
   }
   .attendee-label {
     width: 80vw;

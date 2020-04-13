@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useState } from "react"
 import { useFormik } from "formik"
 import gql from "graphql-tag"
 import { useMutation } from "@apollo/react-hooks"
@@ -62,6 +62,8 @@ let validationSchema = yup
   })
 
 const AtendeeForm = props => {
+  const [formSent, setFormSent] = useState(false)
+
   const [addAttendee, { data }] = useMutation(ADD_ATTENDEE)
 
   function validate(values) {
@@ -90,8 +92,7 @@ const AtendeeForm = props => {
     },
     validate,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
-      console.log(values.name)
+      setFormSent(true)
       addAttendee({
         variables: {
           name: values.name,
@@ -104,7 +105,12 @@ const AtendeeForm = props => {
           food: values.food,
           otros: values.otros,
         },
-      }).then(formik.resetForm())
+      }).then(
+        window.setTimeout(() => {
+          formik.resetForm()
+          setFormSent(false)
+        }, 5000)
+      )
     },
   })
 
@@ -275,14 +281,17 @@ const AtendeeForm = props => {
             className="attendee-input"
           />
         </label>
-        <button className="submit-btn" type="submit">
-          CONFIRMAR
-        </button>
+        <div className={formSent ? "success" : "form-hidden"}>
+          <div>¡Gracias por confirmar! 🎉</div>
+        </div>
         <div className="error-msg">
           {formik.errors.eventos || formik.errors.name
             ? "* Rellena los campos obligatorios"
             : null}
         </div>
+        <button className="submit-btn" type="submit">
+          CONFIRMAR
+        </button>
       </form>
     </div>
   )
