@@ -8,6 +8,8 @@ import "./attendee-form.css"
 
 import Autocar from "../images/autocar.png"
 
+import Arrow2 from "../components/assets/arrow2.svg"
+
 const ADD_ATTENDEE = gql`
   mutation addAttendee(
     $name: String!
@@ -289,9 +291,13 @@ const AtendeeForm = props => {
             ? "* Rellena los campos obligatorios"
             : null}
         </div>
-        <button className="submit-btn" type="submit">
-          CONFIRMAR
-        </button>
+        <div className="submit">
+          <div className="arrow-left"><Arrow2/></div>
+          <button className="submit-btn" type="submit">
+            CONFIRMAR
+          </button>
+          <div className="arrow-right"><Arrow2/></div>
+        </div>
       </form>
     </div>
   )

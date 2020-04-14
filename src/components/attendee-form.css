@@ -98,6 +98,22 @@ textarea ::placeholder {
   width: 5rem;
 }
 
+.submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-left {
+  width: 3rem;
+}
+
+.arrow-right {
+  width: 3rem;
+  transform: rotate(180deg);
+}
+
 .submit-btn {
   border: 5px solid white;
   padding: 4px;
