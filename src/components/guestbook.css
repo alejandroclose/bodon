@@ -1,0 +1,133 @@
+@import url("./fonts/silk-serif-bold/stylesheet.css");
+
+.note{
+  background-color: #EDEFED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note-title{
+    font-family: 'silk_serifbold';
+    text-align: center;
+    margin: 2rem;
+}
+
+.note-content {
+  display: flex;
+  flex-direction: row;
+  width: 44vw;
+}
+
+.note-form {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.note-icon{
+  width: 6rem;
+  height: 5rem;
+}
+.note-name {
+  width: 25vw;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+}
+
+.note-label {
+  font-family: "silk_serifbold";
+  font-size: 1.4rem;
+  margin: 1rem 0.25rem 0 0.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.note-label input,
+textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: grey;
+}
+
+input,
+textarea ::placeholder {
+  color: grey;
+  font-style: italic;
+}
+
+.note-checkbox {
+  background: white;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0px;
+  border-style: none;
+}
+
+.note-input {
+  height: 5rem;
+  border: 0;
+}
+
+.submit-note {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+
+.submit-note-btn {
+  border: 5px solid white;
+  padding: 4px;
+  cursor: pointer;
+  width: 13vw;
+  margin: 2rem 3rem;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.25rem;
+  align-self: center;
+}
+
+.error-note-msg {
+  color: red;
+}
+
+.success {
+  width: 30vw;
+  height: 5vw;
+  margin: 2rem 0 0 0;
+  background-color: white;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .submit-btn {
+    width: 50vw;
+  }
+  .note-form {
+    width: 80vw;
+  }
+  .note-name {
+    width: 80vw;
+  }
+  .note-label {
+    width: 80vw;
+  }
+  .note-input {
+    width: 80vw;
+  }
+
+  .success {
+    width: 75vw;
+    height: 15vw;
+  }
+}

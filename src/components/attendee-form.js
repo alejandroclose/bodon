@@ -40,10 +40,6 @@ const ADD_ATTENDEE = gql`
   }
 `
 
-yup.object({
-  terms: yup.boolean().oneOf([true], "Must Accept Terms and Conditions"),
-})
-
 let validationSchema = yup
   .object({
     name: yup

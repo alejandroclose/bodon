@@ -28,7 +28,6 @@ const typeDefs = gql`
     id: ID!
     name: String!
     message: String!
-    date: String!
   }
 
   type Mutation {
@@ -47,7 +46,6 @@ const typeDefs = gql`
     addNote(
       name: String!
       message: String!
-      date: String!
     ): Note
   }
 `;
@@ -58,11 +56,10 @@ const resolvers = {
     guestbook: async() => {
       const results = await client.query(q.Paginate(q.Match(q.Index("all_notes"))));
       console.log(results)
-      return results.data.map(([ref,name, message, date]) => ({
+      return results.data.map(([ref,name, message]) => ({
         id: ref.id,
         name,
         message,
-        date
       }))
     },
   },
@@ -90,13 +87,12 @@ const resolvers = {
         id: results.ref.id
       }
     },
-    addNote: async (_,{name, message, date}) => {
+    addNote: async (_,{name, message}) => {
       const results = await client.query(
         q.Create(q.Collection("guestbook"), {
           data: {
             name,
-            message,
-            date
+            message
           }
         })
       );
