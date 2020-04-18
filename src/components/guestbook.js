@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useFormik } from "formik"
 import gql from "graphql-tag"
-import { useMutation } from "@apollo/react-hooks"
+import { useMutation, useQuery } from "@apollo/react-hooks"
 import * as yup from "yup"
 
 import "./guestbook.css"
@@ -16,17 +16,35 @@ const ADD_NOTE = gql`
     }
   }
 `
-
+const GET_NOTES = gql`
+  query GetNotes {
+    guestbook {
+      id
+      ts
+      name
+      message
+    }
+  }
+`
 let validationSchema = yup.object({
   name: yup.string().required("Dejarnos tu nombre es obligatorio"),
   message: yup.string().required("¿Quieres dejarnos un mensaje?"),
 })
 
 const Guestbook = props => {
+  
+  const { loading, error, data } = useQuery(GET_NOTES)
+
   const [formSent, setFormSent] = useState(false)
   const [notes, setNotes] = useState([])
 
-  const [addNote, { data }] = useMutation(ADD_NOTE)
+  const [addNote] = useMutation(ADD_NOTE)
+
+  useEffect(() => {
+    if (data) {
+      setNotes(data.guestbook)
+    }
+  }, [data])
 
   function validate(values) {
     const errors = {}
@@ -53,14 +71,14 @@ const Guestbook = props => {
           name: values.name,
           message: values.message,
         },
-      }).then(
-        window.setTimeout(() => {
-          formik.resetForm()
-          setFormSent(false)
-        }, 5000)
-      ).then(
-        setNotes([formik.values], ...notes)
-      )
+      })
+        .then(
+          window.setTimeout(() => {
+            formik.resetForm()
+            setFormSent(false)
+          }, 5000)
+        )
+        .then(setNotes([formik.values], ...notes))
     },
   })
 
@@ -114,11 +132,11 @@ const Guestbook = props => {
         </form>
       </div>
       <div className="wall">
-        {/* <ul>
-            {notes.maps(note => (
-              <li>note</li>
+        <ul>
+            {notes.map(note => (
+              <li>{note.name}</li>
             ))}
-        </ul> */}
+        </ul>
       </div>
     </div>
   )
