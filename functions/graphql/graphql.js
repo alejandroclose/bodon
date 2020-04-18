@@ -8,7 +8,6 @@ var client = new faunadb.Client({secret: process.env.FAUNA});
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    attendees: [Attendee]!
     guestbook: [Note]!
   }
   type Attendee {
@@ -56,10 +55,11 @@ const resolvers = {
     guestbook: async() => {
       const results = await client.query(q.Paginate(q.Match(q.Index("all_notes"))));
       console.log(results)
-      return results.data.map(([ref,name, message]) => ({
+      return results.data.map(([ref,ts, name, message]) => ({
         id: ref.id,
+        ts: ts,
         name,
-        message,
+        message
       }))
     },
   },

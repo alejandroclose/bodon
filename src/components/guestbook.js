@@ -9,32 +9,22 @@ import "./guestbook.css"
 import Pen from "./assets/pen.svg"
 
 const ADD_NOTE = gql`
-  mutation addNote(
-    $name: String!
-    $message: String!
-  ) {
-    addNote(
-      name: $name
-      message: $message
-    ) {
+  mutation addNote($name: String!, $message: String!) {
+    addNote(name: $name, message: $message) {
       id
       name
     }
   }
 `
 
-let validationSchema = yup
-  .object({
-    name: yup
-      .string()
-      .required("Dejarnos tu nombre es obligatorio"),
-    message: yup
-      .string()
-      .required("¿Quieres dejarnos un mensaje?")
-  })
+let validationSchema = yup.object({
+  name: yup.string().required("Dejarnos tu nombre es obligatorio"),
+  message: yup.string().required("¿Quieres dejarnos un mensaje?"),
+})
 
 const Guestbook = props => {
   const [formSent, setFormSent] = useState(false)
+  const [notes, setNotes] = useState([])
 
   const [addNote, { data }] = useMutation(ADD_NOTE)
 
@@ -68,6 +58,8 @@ const Guestbook = props => {
           formik.resetForm()
           setFormSent(false)
         }, 5000)
+      ).then(
+        setNotes([formik.values], ...notes)
       )
     },
   })
@@ -76,51 +68,57 @@ const Guestbook = props => {
     <div className="note">
       <h2 className="note-title">LIBRO DE VISITA</h2>
       <div className="note-content">
-      <div className="note-icon"><Pen/></div>
-      <form className="note-form" onSubmit={formik.handleSubmit}>
-      <div className="note-label">¡Déjanos un mensaje! :)</div>
-        <label className="note-label" htmlFor="name">
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Introduce tu nombre*"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            className={
-              formik.errors.name ? "note-name required" : "note-name"
-            }
-          />
-        </label>
-        <label
-          className= "note-label"
-          htmlFor="message"
-        >
-          <textarea
-            id="message"
-            name="message"
-            type="input"
-            placeholder="Déjanos tu mensaje"
-            onChange={formik.handleChange}
-            value={formik.values.message}
-            className="note-input"
-          />
-        </label>
-        
-        <div className={formSent ? "success" : "form-hidden"}>
-          <div>¡Gracias por tu mensaje!</div>
+        <div className="note-icon">
+          <Pen />
         </div>
-        <div className="error-note-msg">
-          {formik.errors.eventos || formik.errors.name
-            ? "* Rellena los campos obligatorios"
-            : null}
-        </div>
-        <div className="submit-note">
-          <button className="submit-note-btn" type="submit">
-            PUBLICAR
-          </button>
-        </div>
-      </form>
+        <form className="note-form" onSubmit={formik.handleSubmit}>
+          <div className="note-label">¡Déjanos un mensaje! :)</div>
+          <label className="note-label" htmlFor="name">
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Introduce tu nombre*"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+              className={
+                formik.errors.name ? "note-name required" : "note-name"
+              }
+            />
+          </label>
+          <label className="note-label" htmlFor="message">
+            <textarea
+              id="message"
+              name="message"
+              type="input"
+              placeholder="Déjanos tu mensaje"
+              onChange={formik.handleChange}
+              value={formik.values.message}
+              className="note-input"
+            />
+          </label>
+
+          <div className={formSent ? "success" : "form-hidden"}>
+            <div>¡Gracias por tu mensaje!</div>
+          </div>
+          <div className="error-note-msg">
+            {formik.errors.eventos || formik.errors.name
+              ? "* Rellena los campos obligatorios"
+              : null}
+          </div>
+          <div className="submit-note">
+            <button className="submit-note-btn" type="submit">
+              PUBLICAR
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className="wall">
+        <ul>
+            {notes.maps(note => (
+              <li>note</li>
+            ))}
+        </ul>
       </div>
     </div>
   )
