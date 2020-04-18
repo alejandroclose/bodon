@@ -114,11 +114,11 @@ const Guestbook = props => {
         </form>
       </div>
       <div className="wall">
-        <ul>
+        {/* <ul>
             {notes.maps(note => (
               <li>note</li>
             ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   )
