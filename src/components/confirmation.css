@@ -8,17 +8,21 @@
 
 .conf-arrow {
   width: 2rem;
-  margin: 0.5rem;
 }
 
 .conf-btn{
   border: 5px solid white;
+  cursor: pointer;
   padding: 4px;
   width: 13vw;
-  margin: 0.5rem 1rem;
+  margin: 0.5rem;
   background-color: transparent;
   font-weight: 600;
   font-size: 1.25rem;
+}
+
+.conf-btn:hover{
+  background-color: white;
 }
 
 .conf-closed {

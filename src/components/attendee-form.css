@@ -98,6 +98,11 @@ textarea ::placeholder {
   width: 5rem;
 }
 
+.sad-face{
+  width: 1.75rem;
+  margin: 0 0.35rem;
+}
+
 .submit {
   display: flex;
   flex-direction: row;
@@ -117,6 +122,7 @@ textarea ::placeholder {
 .submit-btn {
   border: 5px solid white;
   padding: 4px;
+  cursor: pointer;
   width: 13vw;
   margin: 2rem;
   background-color: transparent;
@@ -125,10 +131,15 @@ textarea ::placeholder {
   align-self: center;
 }
 
+.submit-btn:hover{
+  margin: 2rem 0 2rem 0;
+  background-color: white;
+}
+
 .required {
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  /* -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
   -moz-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
-  box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1); */
 }
 
 .error-msg {

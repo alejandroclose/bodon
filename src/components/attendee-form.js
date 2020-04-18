@@ -8,6 +8,7 @@ import "./attendee-form.css"
 
 import Autocar from "../images/autocar.png"
 
+import Sad from "../components/assets/sad.svg"
 import Arrow2 from "../components/assets/arrow2.svg"
 
 const ADD_ATTENDEE = gql`
@@ -162,7 +163,7 @@ const AtendeeForm = props => {
           <div className="autocar-icon">
             <img src={Autocar} />
           </div>
-          <div>¿Necesitarás servicio de autocar?</div>
+          <div>Necesitaré servicio de autocar</div>
           <input
             id="autocarpre"
             name="autocarpre"
@@ -170,7 +171,7 @@ const AtendeeForm = props => {
             onChange={formik.handleChange}
             checked={formik.values.autocarpre}
             className="autocar-checkbox"
-          />
+          ></input>
         </label>
         <label className="attendee-label-cb" htmlFor="boda">
           <input
@@ -232,7 +233,7 @@ const AtendeeForm = props => {
                 : "attendee-checkbox"
             }
           />
-          No podré ir
+          No podré ir  <Sad className="sad-face"/>
         </label>
         <label
           className={
@@ -292,11 +293,11 @@ const AtendeeForm = props => {
             : null}
         </div>
         <div className="submit">
-          <div className="arrow-left"><Arrow2/></div>
+          <Arrow2 className="arrow-left"/>
           <button className="submit-btn" type="submit">
             CONFIRMAR
           </button>
-          <div className="arrow-right"><Arrow2/></div>
+          <Arrow2 className="arrow-right"/>
         </div>
       </form>
     </div>
