@@ -32,13 +32,11 @@ let validationSchema = yup.object({
 })
 
 const Guestbook = props => {
-  
-  const { loading, error, data } = useQuery(GET_NOTES)
+  const { data } = useQuery(GET_NOTES)
+  const [addNote] = useMutation(ADD_NOTE)
 
   const [formSent, setFormSent] = useState(false)
   const [notes, setNotes] = useState([])
-
-  const [addNote] = useMutation(ADD_NOTE)
 
   useEffect(() => {
     if (data) {
@@ -76,9 +74,8 @@ const Guestbook = props => {
           window.setTimeout(() => {
             formik.resetForm()
             setFormSent(false)
-          }, 5000)
+          }, 5000).then(setNotes(notes.concat(formik.values)))
         )
-        .then(setNotes([formik.values], ...notes))
     },
   })
 
@@ -132,9 +129,16 @@ const Guestbook = props => {
         </form>
       </div>
       <div className="wall">
-        <ul>
-            {notes.map(note => (
-              <li>{note.name}</li>
+        <ul className="wall">
+          {notes
+            .slice(0)
+            .reverse()
+            .map(note => (
+              <li className="wall-note">
+                <div className="note-date">{note.ts}</div>
+                <div className="note-message">{note.message}</div>
+                <div className="note-signature">{note.name}</div>
+              </li>
             ))}
         </ul>
       </div>

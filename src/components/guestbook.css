@@ -1,16 +1,16 @@
 @import url("./fonts/silk-serif-bold/stylesheet.css");
 
-.note{
-  background-color: #EDEFED;
+.note {
+  background-color: #edefed;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.note-title{
-    font-family: 'silk_serifbold';
-    text-align: center;
-    margin: 2rem;
+.note-title {
+  font-family: "silk_serifbold";
+  text-align: center;
+  margin: 2rem;
 }
 
 .note-content {
@@ -27,7 +27,7 @@
   justify-content: flex-start;
 }
 
-.note-icon{
+.note-icon {
   width: 6rem;
   height: 5rem;
 }
@@ -107,6 +107,17 @@ textarea ::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.wall{
+  display: flex;
+  flex-direction: row;
+}
+
+.wall-note{
+  text-decoration: none;
+  list-style: none;
+  margin: 2rem;
 }
 
 @media only screen and (max-width: 767px) {
