@@ -39,6 +39,7 @@ const Guestbook = props => {
 
   const [formSent, setFormSent] = useState(false)
   const [notes, setNotes] = useState([])
+  const [display, setDisplay] = useState(3)
 
   useEffect(() => {
     if (data) {
@@ -87,6 +88,12 @@ const Guestbook = props => {
     default: 3,
     700: 2,
     500: 1,
+  }
+
+  const handleDisplay = () => {
+    if (display < notes.length){
+      setDisplay(display + 3)
+    }
   }
 
   return (
@@ -148,7 +155,8 @@ const Guestbook = props => {
         columnClassName="wall-column"
       >
         {notes
-          .slice(0)
+          .reverse()
+          .slice(0, display)
           .reverse()
           .map(note => {
             let date = new Date(parseInt(note.ts) / 1000)
@@ -166,7 +174,7 @@ const Guestbook = props => {
             )
           })}
       </Masonry>
-      <button className="wall-btn"><ArrowDown/></button>
+      <button className="wall-btn" onClick={handleDisplay}><ArrowDown/></button>
     </div>
   )
 }
