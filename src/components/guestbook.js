@@ -3,6 +3,7 @@ import { useFormik } from "formik"
 import gql from "graphql-tag"
 import { useMutation, useQuery } from "@apollo/react-hooks"
 import * as yup from "yup"
+import Masonry from "react-masonry-css"
 
 import "./guestbook.css"
 
@@ -69,15 +70,22 @@ const Guestbook = props => {
           name: values.name,
           message: values.message,
         },
-      })
-        .then(
-          window.setTimeout(() => {
+      }).then(
+        window
+          .setTimeout(() => {
             formik.resetForm()
             setFormSent(false)
-          }, 5000).then(setNotes(notes.concat(formik.values)))
-        )
+          }, 5000)
+          .then(setNotes(notes.concat(formik.values)))
+      )
     },
   })
+
+  const breakpointColumnsObj = {
+    default: 3,
+    700: 2,
+    500: 1
+  };
 
   return (
     <div className="note">
@@ -128,20 +136,28 @@ const Guestbook = props => {
           </div>
         </form>
       </div>
-      <div className="wall">
-        <ul className="wall">
+      <Masonry
+        className="wall"
+        breakpointCols={breakpointColumnsObj}
+        columnClassName="wall-column"
+      >
           {notes
             .slice(0)
             .reverse()
-            .map(note => (
-              <li className="wall-note">
-                <div className="note-date">{note.ts}</div>
+            .map(note => {
+              let date = new Date(parseInt(note.ts)/1000)
+              var options = {year: 'numeric', month: 'long', day: 'numeric' }
+              let localdate = date.toLocaleDateString('es-ES',options)
+              return(
+                <div className="wall-note" key={note.id}>
+                <div className="note-date">{localdate}</div>
                 <div className="note-message">{note.message}</div>
                 <div className="note-signature">{note.name}</div>
-              </li>
-            ))}
-        </ul>
-      </div>
+              </div>
+              )
+              
+            })}
+      </Masonry>
     </div>
   )
 }

@@ -112,10 +112,17 @@ textarea ::placeholder {
 
 .wall{
   width: 80vw;
+  height: 80vw;
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: baseline;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+
+.wall-column{
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
 }
 
 .wall-note{
