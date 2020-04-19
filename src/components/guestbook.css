@@ -1,5 +1,5 @@
 @import url("./fonts/silk-serif-bold/stylesheet.css");
-@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap");
 
 .note {
   background-color: #edefed;
@@ -47,6 +47,10 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.note-label::placeholder{
+  font-style: italic;
 }
 
 .note-label input,
@@ -110,9 +114,8 @@ textarea ::placeholder {
   justify-content: center;
 }
 
-.wall{
-  width: 80vw;
-  height: 80vw;
+.wall {
+  width: 70vw;
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
@@ -120,12 +123,23 @@ textarea ::placeholder {
   width: auto;
 }
 
-.wall-column{
+.wall-title {
+  font-family: "silk_serifbold";
+  font-size: 1.4rem;
+  width: 77vw;
+}
+
+hr.wall-divider {
+  border: 0.75px solid white;
+  background-color: white;
+}
+
+.wall-column {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
 
-.wall-note{
+.wall-note {
   width: 15rem;
   margin: 1rem;
   padding: 1rem;
@@ -140,16 +154,29 @@ textarea ::placeholder {
   color: grey;
 }
 
-.note-message{
-  font-family: 'Dawning of a New Day', cursive;
+.note-message {
+  font-family: "Dawning of a New Day", cursive;
   font-size: 1.45rem;
   min-height: 3rem;
   margin-top: 0.5rem;
 }
 
+hr.note-divider {
+  width: 10%;
+  border: 0.75px solid #434142;
+  background-color: #434142;
+}
+
 .note-signature {
-  font-family: 'Dawning of a New Day', cursive;
+  font-family: "Dawning of a New Day", cursive;
   font-size: 1.45rem;
+}
+
+.wall-btn {
+  color: #434142;
+cursor: pointer;
+background-color: transparent;
+border: none;
 }
 
 @media only screen and (max-width: 767px) {

@@ -8,6 +8,7 @@ import Masonry from "react-masonry-css"
 import "./guestbook.css"
 
 import Pen from "./assets/pen.svg"
+import ArrowDown from "./assets/arrow-down.svg"
 
 const ADD_NOTE = gql`
   mutation addNote($name: String!, $message: String!) {
@@ -61,6 +62,7 @@ const Guestbook = props => {
     initialValues: {
       name: "",
       message: "",
+      ts: null,
     },
     validate,
     onSubmit: values => {
@@ -84,8 +86,8 @@ const Guestbook = props => {
   const breakpointColumnsObj = {
     default: 3,
     700: 2,
-    500: 1
-  };
+    500: 1,
+  }
 
   return (
     <div className="note">
@@ -114,7 +116,7 @@ const Guestbook = props => {
               id="message"
               name="message"
               type="input"
-              placeholder="Déjanos tu mensaje"
+              placeholder="Déjanos tu mensaje*"
               onChange={formik.handleChange}
               value={formik.values.message}
               className="note-input"
@@ -136,28 +138,35 @@ const Guestbook = props => {
           </div>
         </form>
       </div>
+      <div className="wall-title">
+        Últimos Mensajes
+        <hr className="wall-divider"/>
+        </div>
       <Masonry
         className="wall"
         breakpointCols={breakpointColumnsObj}
         columnClassName="wall-column"
       >
-          {notes
-            .slice(0)
-            .reverse()
-            .map(note => {
-              let date = new Date(parseInt(note.ts)/1000)
-              var options = {year: 'numeric', month: 'long', day: 'numeric' }
-              let localdate = date.toLocaleDateString('es-ES',options)
-              return(
-                <div className="wall-note" key={note.id}>
+        {notes
+          .slice(0)
+          .reverse()
+          .map(note => {
+            let date = new Date(parseInt(note.ts) / 1000)
+            var options = { year: "numeric", month: "long", day: "numeric" }
+            let localdate = date.toLocaleDateString("es-ES", options)
+            return (
+              <div className="wall-note" key={note.id}>
                 <div className="note-date">{localdate}</div>
                 <div className="note-message">{note.message}</div>
-                <div className="note-signature">{note.name}</div>
+                <div className="note-signature">
+                  <hr className="note-divider"/>
+                  {note.name}
+                </div>
               </div>
-              )
-              
-            })}
+            )
+          })}
       </Masonry>
+      <button className="wall-btn"><ArrowDown/></button>
     </div>
   )
 }
