@@ -1,4 +1,5 @@
 @import url("./fonts/silk-serif-bold/stylesheet.css");
+@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap');
 
 .note {
   background-color: #edefed;
@@ -110,14 +111,38 @@ textarea ::placeholder {
 }
 
 .wall{
+  width: 80vw;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .wall-note{
+  width: 15rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: none;
   text-decoration: none;
   list-style: none;
-  margin: 2rem;
+  box-sizing: content-box;
+}
+
+.note-date {
+  color: grey;
+}
+
+.note-message{
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 1.45rem;
+  min-height: 3rem;
+  margin-top: 0.5rem;
+}
+
+.note-signature {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 1.45rem;
 }
 
 @media only screen and (max-width: 767px) {
