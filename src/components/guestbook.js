@@ -100,8 +100,8 @@ const Guestbook = props => {
     <div className="note">
       <h2 className="note-title">LIBRO DE VISITA</h2>
       <div className="note-content">
-        <div className="note-icon">
-          <Pen />
+        <div>
+          <Pen className="note-icon" />
         </div>
         <form className="note-form" onSubmit={formik.handleSubmit}>
           <div className="note-label">¡Déjanos un mensaje! :)</div>
@@ -155,7 +155,6 @@ const Guestbook = props => {
         columnClassName="wall-column"
       >
         {notes
-          .reverse()
           .slice(0, display)
           .reverse()
           .map(note => {

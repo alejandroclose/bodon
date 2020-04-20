@@ -11,7 +11,7 @@
 .note-title {
   font-family: "silk_serifbold";
   text-align: center;
-  margin: 2rem;
+  margin-top: 2rem;
 }
 
 .note-content {
@@ -180,12 +180,24 @@ border: none;
 }
 
 @media only screen and (max-width: 767px) {
-  .submit-btn {
+  .submit-note-btn {
     width: 50vw;
   }
   .note-form {
     width: 80vw;
   }
+  .note-content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+  }
+  .note-icon {
+    width: 6rem;
+    height: 5rem;
+    box-align: center;
+  }
+
   .note-name {
     width: 80vw;
   }
