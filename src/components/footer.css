@@ -1,0 +1,8 @@
+.credits {
+  color: grey;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9rem;
+}
