@@ -8,7 +8,6 @@ import "./attendee-form.css"
 
 import Autocar from "../images/autocar.png"
 
-import Sad from "../components/assets/sad.svg"
 import Arrow2 from "../components/assets/arrow2.svg"
 
 const ADD_ATTENDEE = gql`
@@ -156,10 +155,6 @@ const AtendeeForm = props => {
           <div className="autocar-list">
             <div className="autocar-line"></div>
           </div>
-          <div className="autocar-icon">
-            <img src={Autocar} />
-          </div>
-          <div>Necesitaré servicio de autocar</div>
           <input
             id="autocarpre"
             name="autocarpre"
@@ -168,6 +163,10 @@ const AtendeeForm = props => {
             checked={formik.values.autocarpre}
             className="autocar-checkbox"
           ></input>
+          <div className="autocar-icon">
+            <img src={Autocar} />
+          </div>
+          <div>Necesitaré servicio de autocar</div>
         </label>
         <label className="attendee-label-cb" htmlFor="boda">
           <input
@@ -192,10 +191,6 @@ const AtendeeForm = props => {
           <div className="autocar-list">
             <div className="autocar-line"></div>
           </div>
-          <div className="autocar-icon">
-            <img src={Autocar} />
-          </div>
-          <div>¿Necesitarás servicio de autocar?</div>
           <input
             id="autocarboda"
             name="autocarboda"
@@ -204,6 +199,10 @@ const AtendeeForm = props => {
             checked={formik.values.autocarboda}
             className="autocar-checkbox"
           />
+          <div className="autocar-icon">
+            <img src={Autocar} />
+          </div>
+          <div>Necesitaré servicio de autocar</div>
         </label>
 
         <label
@@ -229,7 +228,7 @@ const AtendeeForm = props => {
                 : "attendee-checkbox"
             }
           />
-          No podré ir  <Sad className="sad-face"/>
+          No podré ir
         </label>
         <label
           className={
@@ -289,11 +288,11 @@ const AtendeeForm = props => {
             : null}
         </div>
         <div className="submit">
-          <Arrow2 className="arrow-left"/>
+          <Arrow2 className="arrow-left" />
           <button className="submit-btn" type="submit">
             CONFIRMAR
           </button>
-          <Arrow2 className="arrow-right"/>
+          <Arrow2 className="arrow-right" />
         </div>
       </form>
     </div>
