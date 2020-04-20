@@ -31,8 +31,8 @@ class Header extends React.Component {
             <Link to="#evento">EL EVENTO</Link>
             <Link to="#dress-code">DRESS CODE</Link>
             <Link to="#confirmar">CONFIRMAR</Link>
-            <Link to="#confirmar">LIBRO DE VISITA</Link>
-            <Link to="#confirmar">HOTELES</Link>
+            <Link to="#guestbook">LIBRO DE VISITA</Link>
+            <Link to="#contact">CONTACTO</Link>
           </div>
         </div>
       </header>

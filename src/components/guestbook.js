@@ -97,7 +97,7 @@ const Guestbook = props => {
   }
 
   return (
-    <div className="note">
+    <div id="guestbook">
       <h2 className="note-title">LIBRO DE VISITA</h2>
       <div className="note-content">
         <div>

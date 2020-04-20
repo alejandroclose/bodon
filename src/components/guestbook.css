@@ -1,7 +1,7 @@
 @import url("./fonts/silk-serif-bold/stylesheet.css");
 @import url("https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap");
 
-.note {
+#guestbook {
   background-color: #edefed;
   display: flex;
   flex-direction: column;
