@@ -1,0 +1,86 @@
+@import url("./fonts/silk-serif-bold/stylesheet.css");
+#contact {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.contact-header {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  font-family: "silk_serifbold";
+  margin: 0;
+}
+
+.contact-content {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.contact-desc {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-img {
+  width: 5rem;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-text-title {
+  font-family: "silk_serifbold";
+}
+
+.contact-text-content {
+  width: 25vw;
+  text-align: center;
+}
+
+.break {
+  border-right: 2px dashed #b5b6b7;
+  margin-right: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-desc {
+    width: 100vw;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .contact-img {
+    width: 5rem;
+  }
+
+  .contact-text-content {
+    width: 85vw;
+    font-size: 0.9rem;
+  }
+
+  .break {
+    border-right: none;
+  }
+}

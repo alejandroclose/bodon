@@ -9,6 +9,7 @@ import SingleEvent from "../components/single-event"
 import Confirmation from "../components/confirmation"
 import DressCode from "../components/dresscode"
 import Guestbook from "../components/guestbook"
+import Contact from "../components/contact"
 
 import Masia from "../images/masia.png"
 import Iglesia from "../images/iglesia.png"
@@ -59,6 +60,7 @@ export default () => {
       <Confirmation />
       <DressCode />
       <Guestbook />
+      <Contact />
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )

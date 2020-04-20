@@ -68,6 +68,7 @@ textarea ::placeholder {
 
 .note-input {
   height: 5rem;
+  width: 25vw;
   border: 0;
 }
 
