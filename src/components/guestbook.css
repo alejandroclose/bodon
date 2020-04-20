@@ -66,15 +66,6 @@ textarea ::placeholder {
   font-style: italic;
 }
 
-.note-checkbox {
-  background: white;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 0px;
-  border-style: none;
-}
-
 .note-input {
   height: 5rem;
   border: 0;
@@ -152,6 +143,7 @@ hr.wall-divider {
 
 .note-date {
   color: grey;
+  font-size: 0.8rem;
 }
 
 .note-message {

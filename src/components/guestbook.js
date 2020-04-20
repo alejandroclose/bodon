@@ -110,7 +110,7 @@ const Guestbook = props => {
               id="name"
               name="name"
               type="text"
-              placeholder="Introduce tu nombre*"
+              placeholder="Tu nombre*"
               onChange={formik.handleChange}
               value={formik.values.name}
               className={
@@ -123,7 +123,7 @@ const Guestbook = props => {
               id="message"
               name="message"
               type="input"
-              placeholder="Déjanos tu mensaje*"
+              placeholder="Tu mensaje*"
               onChange={formik.handleChange}
               value={formik.values.message}
               className="note-input"
