@@ -29,7 +29,7 @@ export default () => {
         schedule="13:30h, Jueves 15 de Octubre de 2020"
         location="TBD"
         address=""
-        mobility="Se facilitará servicio de autocar desde el centro de Barcelona a la casa de Cabrils y de regreso."
+        mobility="Se facilitará servicio de autocar desde el centro de Barcelona y de regreso."
         map="Mapa e indicaciones"
         mapLink="https://www.google.com/maps/place/Passatge+Sant+Joan,+08348+Cabrils,+Barcelona/@41.5209197,2.3823943,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4b4213b268661:0x3d904ff5ded2049c!8m2!3d41.5209203!4d2.3844475"
       />
