@@ -132,7 +132,7 @@ const AtendeeForm = props => {
         <div name="eventos" className="attendee-label">
           ¿A qué eventos vendrás?*
         </div>
-        <label className="attendee-label-cb" htmlFor="preboda">
+        {/* <label className="attendee-label-cb" htmlFor="preboda">
           <input
             id="preboda"
             name="preboda"
@@ -147,7 +147,7 @@ const AtendeeForm = props => {
             disabled={formik.values.noviene ? "disabled" : ""}
           />
           <div>Comida pre-boda</div>
-        </label>
+        </label> */}
         <label
           className={formik.values.preboda ? "autocar-label" : "form-hidden"}
           htmlFor="autocarpre"
