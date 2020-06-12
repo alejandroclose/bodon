@@ -26,7 +26,7 @@ class DressCode extends React.Component {
             <div><img className="dc-img" src={Women}/></div>
             <div className="dc-text">
               <h3 className="dc-text-title">Mujeres</h3>
-              <div className="dc-text-content">Vestido corto y tocado opcional.<br/>Se ruega evitar el color blanco y los tonos beige, crudos y empolvados.</div>
+              <div className="dc-text-content">Vestido corto. Tocado opcional.<br/>Se ruega evitar el color blanco.</div>
             </div>
           </div>
           <div className="dc-desc">
