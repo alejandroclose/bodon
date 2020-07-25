@@ -112,7 +112,6 @@ textarea ::placeholder {
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
   margin-left: -30px; /* gutter size offset */
-  width: auto;
 }
 
 .wall-title {
@@ -204,5 +203,9 @@ border: none;
   .success {
     width: 75vw;
     height: 15vw;
+  }
+
+  .wall {
+    width: auto;
   }
 }
