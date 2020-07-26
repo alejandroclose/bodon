@@ -114,7 +114,7 @@ const AtendeeForm = props => {
 
   return (
     <div>
-      <form className="attendee-form" onSubmit={formik.handleSubmit}>
+      <form className="attendee-form" onSubmit={formik.handleSubmit} netlify>
         <label className="attendee-label" htmlFor="name">
           Nombre y Apellido*
           <input
