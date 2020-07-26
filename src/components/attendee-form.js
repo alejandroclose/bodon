@@ -118,7 +118,21 @@ const AtendeeForm = props => {
         className="attendee-form"
         onSubmit={formik.handleSubmit}
         name="attendee-form"
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="attendee-form" />
+        
+        {/* Added hidden label for netlify functions to get the form data
+    <form name="attendee-form" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="checkbox" name="boda" />
+      <input type="checkbox" name="autocarboda" />
+      <input type="checkbox" name="noviene" />
+      <textarea name="plusone" />
+      <textarea name="food" />
+      <textarea name="otros" />
+    </form> */}
         <label className="attendee-label" htmlFor="name">
           Nombre y Apellido*
           <input
