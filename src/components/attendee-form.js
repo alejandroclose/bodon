@@ -114,10 +114,11 @@ const AtendeeForm = props => {
 
   return (
     <div>
-      <form className="attendee-form" onSubmit={formik.handleSubmit} name="attendee-form" netlify netlify-honeypot="bot-field">
-        {/* Added hidden label for netlify functions to get the form data */}
-        <input type="hidden" name="form-name" value="attendee-form" />
-
+      <form
+        className="attendee-form"
+        onSubmit={formik.handleSubmit}
+        name="attendee-form"
+      >
         <label className="attendee-label" htmlFor="name">
           Nombre y Apellido*
           <input
@@ -151,7 +152,7 @@ const AtendeeForm = props => {
           />
           <div>Comida pre-boda</div>
         </label> */}
-        <label
+        {/* <label
           className={formik.values.preboda ? "autocar-label" : "form-hidden"}
           htmlFor="autocarpre"
         >
@@ -170,7 +171,7 @@ const AtendeeForm = props => {
             <img src={Autocar} />
           </div>
           <div>Necesitaré servicio de autocar</div>
-        </label>
+        </label> */}
         <label className="attendee-label-cb" htmlFor="boda">
           <input
             id="boda"
